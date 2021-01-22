@@ -1,0 +1,171 @@
+<view class="shop-mes">
+	<text>商品信息</text>
+</view>
+<view class="shop-lists list-type-wp mes-lists" data-id="696">
+	<view class="lists-header clear">
+		<view class="fl">购物清单</view>
+
+		<view class="fr now-type text-color" wx:if="{{orderinfo.so_status == '1'}}">待付款</view>
+		<view class="fr now-type text-color" wx:if="{{orderinfo.so_status == '2'}}">待发货</view>
+		<view class="fr now-type text-color" wx:if="{{orderinfo.so_status == '3'}}">待收货</view>
+		<view class="fr now-type text-color" wx:if="{{orderinfo.so_status == '4'}}">待评价</view>
+		<view class="fr now-type text-color" wx:if="{{orderinfo.so_status == '5'}}">已完成</view>
+		<view class="fr now-type text-color" wx:if="{{orderinfo.so_status == '6'}}">已取消</view>
+
+	</view>
+	<view class="items">
+    <view wx:for="{{orderinfo.goods}}" wx:key="{{index}}">
+      <navigator class="clear" url="../goodsInfo/GoodsInfo?id={{item.sog_goods_id}}">
+        <!--图片-->
+        <view class="pic fl">
+          <image src="{{item.sog_goods_img}}"></image>
+        </view>
+        <!--右侧内容-->
+        <view class="items-right fl">
+          <!--展示部分-->
+          <view class="items-show">
+            <view class="item-con-header clear">
+              <view class="fl h4">{{item.sog_goods_name}}</view>
+              <text class="fr items-num">x{{item.sog_goods_num}}</text>
+            </view>
+            <view class="items-middle">
+                        </view>
+            <view class="items-footer">
+              <text class="item-footer-money in-block">{{item.sog_goods_price}}</text>
+              <text class="text in-block"> 元/单价 {{item.apply_service_inf.s_deal_status_}}</text>
+            </view>
+            <block wx:if="{{item.apply_service_inf}}">
+              <view wx:if="{{item.apply_service_inf.s_deal_status_ == '0'}}" style="font-size:24rpx;border:1px solid red;color:red;border-radius:3px;display:inline-block;">申请售后中</view>
+              <view wx:if="{{item.apply_service_inf.s_deal_status_ == '1'}}" style="font-size:24rpx;border:1px solid red;color:red;border-radius:3px;display:inline-block;">同意维修/退货</view>
+              <view wx:if="{{item.apply_service_inf.s_deal_status_ == '2'}}" style="font-size:24rpx;border:1px solid red;color:red;border-radius:3px;display:inline-block;">已寄回商品</view>
+              <view wx:if="{{item.apply_service_inf.s_deal_status_ == '3'}}" style="font-size:24rpx;border:1px solid red;color:red;border-radius:3px;display:inline-block;">卖家已收到</view>
+              <view wx:if="{{item.apply_service_inf.s_deal_status_ == '4'}}" style="font-size:24rpx;border:1px solid red;color:red;border-radius:3px;display:inline-block;">已退款</view>
+              <view wx:if="{{item.apply_service_inf.s_deal_status_ == '5'}}" style="font-size:24rpx;border:1px solid red;color:red;border-radius:3px;display:inline-block;">维修后已寄回</view>
+              <view wx:if="{{item.apply_service_inf.s_deal_status_ == '6'}}" style="font-size:24rpx;border:1px solid red;color:red;border-radius:3px;display:inline-block;">客户确认收到</view>
+            </block>
+          </view>
+        </view>
+      </navigator>
+      <block wx:if="{{item.wuliu_id || item.is_hasbeen_apply == 0 || item.apply_service_inf || orderinfo.btn == '4' || orderinfo.btn == '15'}}">
+      <view class="lists-footer clear" style="padding:0.3rem 0;">
+        <button class="footer-btn wait-pay fr bg-color" wx:if="{{item.wuliu_id}}" data-ord="{{orderinfo.so_id}}" data-num='{{item.wuliu_id}}'  bindtap='chakan_liu'>查看物流</button>
+        <button wx:if="{{item.is_hasbeen_apply == 0}}" class="footer-btn wait-pay fr bg-color" data-ord="{{orderinfo.so_id}}" data-id="{{item.sog_id}}"  bindtap='shouhou'>申请售后</button>
+        <button class="footer-btn wait-pay fr bg-color" wx:if="{{item.apply_service_inf.s_deal_status_ == '0'}}" data-id="{{item.sog_id}}" data-ord="{{orderinfo.so_id}}"  bindtap='quxiao_tuikuan'>取消售后</button>
+        <button class="footer-btn wait-pay fr bg-color" wx:if="{{item.apply_service_inf.s_deal_status_ == '1'}}" data-id="{{item.sog_id}}" data-ord="{{orderinfo.so_id}}"  bindtap='tiantuihuo'>填写维修/退货单号</button>
+        <button class="footer-btn wait-pay fr bg-color" wx:if="{{item.apply_service_inf.s_deal_status_ == '5'}}" data-id="{{item.sog_id}}" data-ord="{{orderinfo.so_id}}"  bindtap='ok_weixiu'>确认收到维修后商品</button>
+        <block wx:if="{{orderinfo.btn == '4' || orderinfo.btn == '15'}}">
+          <button class="footer-btn wait-pay fr bg-color" data-ord="{{orderinfo.so_id}}" data-sogid="{{item.sog_goods_id}}"  bindtap='pingjia'>评价</button>
+        </block>
+      </view>
+      </block>
+    </view>
+
+    </view>
+    <view class="lists-footer clear" >
+        <block wx:if="{{orderinfo.btn == '1'}}">
+          <button class="footer-btn wait-pay fr bg-color" data-order="{{orderinfo.so_orderid}}" data-price="{{orderinfo.so_sum_price}}" data-ord="{{orderinfo.so_id}}"  bindtap='cacList'>取消订单</button>
+          <button class="footer-btn wait-pay fr bg-color" data-order="{{orderinfo.so_orderid}}" data-price="{{orderinfo.so_sum_price}}" bindtap='pay'>立即支付</button>
+        </block>
+        <block wx:if="{{orderinfo.btn == '2'}}">
+          <button class="footer-btn wait-pay fr bg-color" data-ord="{{orderinfo.so_id}}" wx:if="{{orderinfo.is_hasbeen_apply == 0}}" bindtap='tuikuan'>申请退款</button>
+        </block>
+        <block wx:if="{{orderinfo.btn == '3'}}">
+          <button class="footer-btn wait-pay fr bg-color" data-ord="{{orderinfo.so_id}}"  bindtap='queren_shou'>确认收货</button>
+        </block>
+        <block wx:if="{{orderinfo.btn == '4' || item.btn == '15'}}">
+          <button class="footer-btn wait-pay fr bg-color" data-ord="{{orderinfo.so_id}}" data-sogid="{{orderinfo.goods[0].sog_goods_id}}"  bindtap='pingjia'>评价</button>
+          <button class="footer-btn wait-pay fr bg-color" data-ord="{{orderinfo.so_id}}" wx:if="{{orderinfo.is_hasbeen_apply == 0}}"  bindtap='shouhou'>申请售后</button>
+        </block>
+        <block wx:if="{{orderinfo.btn == '5'}}">
+          <button class="footer-btn wait-pay fr bg-color" data-ord="{{orderinfo.so_id}}"  bindtap='del_order'>删除订单</button>
+          <button class="footer-btn wait-pay fr bg-color" data-ord="{{orderinfo.so_id}}" wx:if="{{orderinfo.is_hasbeen_apply == 0}}" bindtap='shouhou'>申请售后</button>
+        </block>
+        <block wx:if="{{orderinfo.btn == '7'}}">
+          <button class="footer-btn wait-pay fr bg-color" data-ord="{{orderinfo.so_id}}"  bindtap='quxiao_tuikuan'>取消售后</button>
+        </block>
+        <block wx:if="{{orderinfo.btn == '8'}}">
+          <button class="footer-btn wait-pay fr bg-color" data-ord="{{orderinfo.so_id}}"  bindtap='del_order'>删除订单</button>
+        </block>
+        <block wx:if="{{orderinfo.btn == '9'}}">
+          <button class="footer-btn wait-pay fr bg-color" data-ord="{{orderinfo.so_id}}"  bindtap='del_order'>删除订单</button>
+          <button class="footer-btn wait-pay fr bg-color" data-ord="{{orderinfo.so_id}}" wx:if="{{orderinfo.is_hasbeen_apply == 0}}" bindtap='shouhou'>申请售后</button>
+        </block>
+
+        <block wx:if="{{item.btn == '10'}}">
+            <button class="footer-btn wait-pay fr bg-color" data-ord="{{item.so_id}}"  bindtap='tiantuihuo'>填写维修/退货单号</button>
+          </block>
+          <block wx:if="{{item.btn == '11' || item.btn == '12' || item.btn == '13'}}"></block>
+          
+          <block wx:if="{{item.btn == '14'}}">
+            <button class="footer-btn wait-pay fr bg-color" data-ord="{{item.so_id}}"  bindtap='ok_weixiu'>确认收到维修后商品</button>
+          </block>
+      </view>
+	
+</view>
+<view class="m-money-mes mes-lists">
+	<view class="clear p">
+		<text class="fl">运费</text>
+		<text class="fr text-color">{{orderinfo.so_postage == null ? "0" : orderinfo.so_postage}}元</text>
+	</view>
+	<view class="clear p">
+		<text class="fl">实付款</text>
+		<text class="fr text-color">{{orderinfo.so_sum_price}}元</text>
+	</view>
+</view>
+
+<view class="mes-lists m-text-list">
+	<view>收货人：{{orderinfo.so_addr_name}}</view>
+	<view>手机号：{{orderinfo.so_addr_tel}}</view>
+	<view>收货地址：{{orderinfo.so_addr_mess}}</view>
+</view>
+
+<view class="mes-lists m-text-list">
+	<view>订单编号：<text>{{orderinfo.so_orderid}}</text></view>
+	<view>创建订单：{{orderinfo.create_time}}</view>
+	<view>支付时间：{{orderinfo.so_paytime ? orderinfo.so_paytime : ""}}</view>
+	<view wx:if="{{orderinfo.so_invoice_type == '1'}}">抬头：{{orderinfo.so_invoice_text}}</view>
+	<view wx:if="{{orderinfo.so_invoice_type == '2'}}">纳税人识别号：{{orderinfo.so_invoice_numb}}</view>
+	<view wx:if="{{orderinfo.so_invoice_type == '1'}}">邮箱：{{orderinfo.so_invoice_email}}</view>
+</view>
+
+
+<!-- 物流信息 -->
+  <view class="wuliu" hidden="{{wuliuflg}}">
+    <view class="wuliu_main">
+      <view class="ul">
+        <view class="li" wx:for="{{wuliulist}}" wx:key="{{index}}">
+          <text></text>
+          <text></text>
+          <view class="li_time">{{item.time}}</view>
+          <view class="li_text">{{item.context}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+    <!-- 退货单号填写 -->
+  <view class="tuihuo" hidden="{{wuliu_hide}}">
+    <view class="tuihuo_main">
+      <view class="tuihuo_title">退货物流</view>
+      <view class="tuihuo_con">
+        <view class="section">
+          <view class="section__title">物流方式</view>
+          <picker bindchange="bindPickerChange" value="{{wuliutype_index}}" range="{{wuliutype}}">
+            <view class="picker">
+              {{wuliutype[wuliutype_index]}}
+            </view>
+          </picker>
+        </view>
+        <view class="section">
+          <view class="section__title">物流单号</view>
+          <input class="weui-input" placeholder="" bindinput="wuliu_val" />
+        </view>
+      </view>
+      <view class="tuihuo_btn">
+        <text class="tui_quxiao" bindtap="tui_quxiao">取消</text>
+        <text class="tui_queding" bindtap="tui_queding">确定</text>
+      </view>
+    </view>
+    <view class="wuliu_guan" bindtap="guan_wuliu"><icon class="icon-small" type="cancel" size="23"></icon></view>
+  </view>

@@ -1,0 +1,33 @@
+<view>
+
+  <view class="head">
+    <view>充值金额</view>
+    <view>￥{{obj.chong}}</view>
+    <view>赠送金额 {{obj.zeng}}</view>
+  </view>
+
+  <view class="fangshi">
+    <view>支付方式</view>
+    <view><text class="iconfont icon-weixin"></text> 微信支付</view>
+  </view>
+
+  <view class="fapiao">
+    <view>
+      <text>发票种类：</text>
+      <view>
+        <picker bindchange="bindPickerChange" value="{{fapiaolistindex}}" range="{{fapiaolist}}">
+          {{fapiaolist[fapiaolistindex]}}
+        </picker>
+      </view>
+    </view>
+    <view wx:if="{{fapiaolistindex == '1'}}">  
+      <text>发票种类：</text>
+      <view>
+        <input type="text" bindinput="inputpiaoval"/>
+      </view>
+    </view>
+  </view>
+
+  <view class="btn_chong" bindtap="sub">需支付{{obj.chong}}元</view>
+
+</view>

@@ -1,0 +1,29 @@
+<view>
+
+  <view class="head">
+    <view>当前选项：{{city == ''?'定位中...':city}}</view>
+    <view bindtap="qiehuanclick">切换</view>
+  </view>
+
+  <view class="ul">
+    <view wx:for="{{list.store_data}}" wx:key="{{index}}" class="li" bindtap="mapClick" data-address="{{item.addresss}}">
+      <view>{{item.store_name}}</view>
+      <view><text class="iconfont icon-dizhi" style="font-size:26rpx;"></text> {{item.addresss}}</view>
+      <view><text class="iconfont icon-dianhua" style="font-size:26rpx;"></text> {{item.store_tel}}</view>
+    </view>
+  </view>
+
+  <view class="city" wx:if="{{qiehuan}}">
+    <view class="dangqian_city">
+      <view class="city_title">当前城市</view>
+      <view class="city_list">
+        <view><text class="iconfont icon-dizhi" style="font-size:26rpx;"></text>{{city == ''?'定位中...':city}}</view>     
+      </view>
+      <view class="city_title">已开通服务城市</view>
+      <view class="city_list">
+        <view wx:for="{{list.area}}" wx:key="{{index}}" bindtap="cityclick" data-city="{{item}}">{{item}}</view>
+      </view>
+    </view>
+  </view>
+
+</view>

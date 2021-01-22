@@ -1,0 +1,10 @@
+page{background: #fff;}
+.ul .li{border-bottom:1px solid #eee;padding:20rpx 30rpx;display: flex;line-height: 52rpx;}
+.ul .li view:nth-child(1){font-size:24rpx;width:100rpx;}
+.ul .li input,.ul .li picker{flex: 1;font-size:24rpx;}
+.ul .li view:nth-child(2){font-size:24rpx;color: red;}
+.btn{font-size:24rpx;color: #fff;margin: 60rpx 3%;width:94%;padding:25rpx 0;text-align: center;background: #e13953;}
+
+
+
+

@@ -1,0 +1,29 @@
+<view>
+  <view class="head">
+    <view>总充值金额：</view>
+    <text>{{price?price:''}}</text>
+  </view>
+  <view class="ul">
+    <view class="li" wx:for="{{list}}" wx:for-index="i">
+      <view class="li_top" bindtap="liclick" data-index="{{i}}">
+        <view class="li_top_left">
+          <text>消费</text>
+          <view>{{item.create_time}}</view>
+        </view>
+        <view class="li_top_right">{{item.control_type == '1' ? '+'+item.chong : '-'+item.chong}}</view>
+      </view>
+      <view class="li_bot" wx:if="{{index == i}}">
+        <block wx:if="{{item.control_type == 1}}">
+          <view>{{item.mess}}</view>
+          <view>充值金额 <text>+{{item.chong}}</text></view>
+        </block>
+        <block wx:else>
+          <view>{{item.mess}}</view>
+          <view>实付金额 <text>-{{item.chong}}</text></view>
+        </block>
+        <view wx:if="{{item.zeng_money}}">赠送金额 <text>+{{item.zeng_money}}</text></view>
+      </view>
+    </view>
+  </view>
+</view>
+

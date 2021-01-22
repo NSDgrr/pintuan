@@ -1,0 +1,248 @@
+::-webkit-scrollbar {
+ width: 0;
+ height: 0;
+ color: transparent;
+}
+.indexBack{
+  padding:6rpx 20rpx;
+  background: #fff;  
+}
+#search-box{
+    display: flex;
+    padding:20rpx 0;
+    
+}
+.iconNav{
+    flex:0 0 10%;
+    line-height:60rpx;
+    text-align:center;
+}
+.iconNav .iconfont{
+    font-size:40rpx;
+}
+.search{
+    flex:0 0 80%;
+    height:160rpx;
+    font-size:28rpx;
+    line-height:160rpx;
+    text-align:center;
+    background: #fff;
+    border-radius:10rpx;
+}
+.search view{
+  font-size:24rpx;
+background:#fff;
+padding:20rpx 40rpx;
+
+
+}
+.search input{
+  width:100%;
+  height:60rpx;
+  background:#eee;
+  line-height:60rpx;
+  border-radius:8rpx;
+  text-align:center;
+
+}
+
+/*横向滚动分类导航*/
+.width-scroll-container{
+    background: #fff;
+    white-space: nowrap;
+    display: flex;
+    overflow-x: auto;
+    height:62rpx;
+    line-height:60rpx;
+
+}
+.width-scorll-item{
+    display: inline-block;
+    width: 190rpx;
+    font-size:28rpx;
+    overflow: hidden;
+    line-height:60rpx;
+    text-align:center;
+    box-sizing: border-box;
+}
+.baseMarginTop{
+  margin-top: 0;
+}
+.width-scroll-container .active{
+    color:#b4282d;
+    border-bottom:2px solid #b4282d;
+}
+.groom{
+    text-align: center;
+    height: 100rpx;
+    line-height: 100rpx;
+    color: #333;
+    font-size: 30rpx;
+}
+/*商品列表*/
+.goods-container{
+    background: #fff;
+}
+.goods-container .goods-list{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap;
+    padding: 0 30rpx;
+}
+.goods-container .goods-list .goods-item-warp{
+    overflow: hidden;
+    padding: 15rpx 0;
+    border-bottom: 1px solid #ccc;
+    width:49%;
+} 
+.goods-container .goods-list .goods-item-warp image{
+    width: 100%;
+    /* height: 150rpx; */
+    background: #f4f4f4;
+    display: block;
+    float: left;
+    margin-right: 20rpx;
+}
+
+.goods-container .goods-list .goods-item-warp .one-line{
+    width:100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 30rpx;
+}
+
+.goods-container .goods-list .goods-item-warp .tags{
+    width: 100%;
+    background: #F1ECE2;
+    font-size: 26rpx;
+    color: #9F8A60;
+    padding: 10rpx 20rpx;
+}
+
+
+
+
+.goods-container_s{
+    background: #fff;
+}
+.goods-container_s .goods-list{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap;
+    padding: 0 30rpx;
+}
+.goods-container_s .goods-list .goods-item-warp{
+    overflow: hidden;
+    padding: 15rpx 0;
+    border-bottom: 1px solid #ccc;
+    width:100%;
+} 
+.goods-container_s .goods-list .goods-item-warp image{
+    width: 30%;
+    /* height: 150rpx; */
+    background: #f4f4f4;
+    display: block;
+    float: left;
+    margin-right: 20rpx;
+}
+
+.goods-container_s .goods-list .goods-item-warp .one-line{
+    font-size: 30rpx;
+}
+.goods-container_s .goods-list .goods-item-warp .one-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.goods-container_s .goods-list .goods-item-warp .tags{
+    width: 100%;
+    background: #F1ECE2;
+    font-size: 26rpx;
+    color: #9F8A60;
+    padding: 10rpx 20rpx;
+}
+// tab
+.goods-tab-box{
+  background: #fff;
+  padding:5rpx 35rpx;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.goods-tab{
+  display:flex;
+  font-size: 28rpx;
+  margin-bottom: 2rpx;
+  background: white;
+  
+}
+.goods-tab>view{
+  width: 33.3%;
+  text-align: center;
+  line-height: 2.5;
+}
+.goods-tab .active{
+  color: #b2282e;
+}
+.goods-tab .active view{
+  display: block;
+}
+.goods-tab>view{
+  text-align: center;
+}
+.goods-tab view view{
+  width:100%;
+  height: 5rpx;
+  background: #b2282e;
+  display: none;
+}
+.goods-container{
+  padding-top: 20rpx;
+}
+
+/* search框 */
+.btn-search{
+  border: none;
+  font-size: 14px;
+  background: none;
+  color: #B4282D;
+  position: inherit;
+  padding: 12rpx 20rpx;
+  margin-right: 9rpx;
+}
+.histroysearch{
+  background: white;
+  font-size: 24rpx;
+  color: #333;
+  border-top: 1px solid #F4F4F4;
+  line-height:3;
+  padding-left: 4%;
+}
+.clearhistroy{
+  background: white;
+  margin-top: none;
+  
+  border: none;
+  font-size: 12px;
+
+}
+
+.searchbtn{
+    display: inline-block;
+    line-height: 1;
+  margin-right: 10px;   
+}
+
+.flexible{display:flex;display:-webkit-flex;}
+.aItem-center{
+  align-items:center;
+  -webkit-align-items:center
+}
+.flex{
+  flex:1;
+}
+.histroysearch{
+  display: flex;
+  flex-wrap:nowrap;
+}

@@ -1,0 +1,125 @@
+<!--index.wxml-->
+<view class="header bg-color">
+    <view class="head_1" style="padding:{{mpid == '609'?'':'11.5rpx 28.5rpx'}}">
+        <image wx:if="{{mpid == '609'}}" src="https://visa.mobtop.com.cn/Addons/IdouStore/View/Public/StaticPublic/imgs/mai_logo2.png" alt="" mode="widthFix"></image>
+        <text wx:if="{{mpid == '609'}}" class="head_text"></text>
+        <!-- <text class="head_p">-健康-\n生活馆</text> -->
+        <view class="head_view">
+            <navigator url="../TypeIndex/TypeIndex">
+                <icon class="iconfont icon-search" style="margin:{{mpid == '609'?'':'-2px 0 0 10px'}}"></icon>
+                <input type="text" placeholder="搜索" style="width:{{mpid=='609'?'':'90%'}};margin:{{mpid=='609'?'11rpx':'5rpx'}};"/>
+            </navigator>
+        </view>
+    </view>
+    <view class="head_2">
+      <swiper class="page-swiper" autoplay="{{autoplay}}" interval="5000" circular="true" indicator-dots="true" indicator-active-color="#b4282d">
+        <block wx:for="{{list.swipperImg}}" wx:key="index">
+          <block wx:if='{{item.is_video == 1}}'>
+            <swiper-item>
+              <video src='{{item.sc_img}}' controls='true' bindplay='videoPlay' bindpause='videoPause' poster="{{item.fimg}}"></video>
+            </swiper-item>
+          </block>
+          <block wx:if='{{item.is_video == 0}}'>
+            <swiper-item>
+                <view bindtap="goBannerList" data-url="{{item.list_url}}"  hover-class="none">
+                    <image src="{{item.sc_img}}" class="slide-image" />
+                </view>
+            </swiper-item>
+          </block>
+        </block>
+      </swiper>
+      <view class="gonggao" wx:if="{{notice}}">
+        <text class="iconfont icon-gonggao"></text>
+        <view class="gonggao_text">
+          <text class="tongzhi-text">{{notice}}</text>
+        </view>
+      </view>
+    </view>
+</view>
+
+<view class="huijuan" style="padding:{{mpid == '609'?'':'66px 24rpx 0'}}">
+    <view class="huijuan_ul">
+        <view class="huijuan_li" wx:for="{{youhui_list}}" wx:key="index" bindtap="linqu_click" data-code="{{item.id}}">
+            <text class="huijuan_p_1">{{item.num}}</text>
+            <view>
+                <text class="huijuan_p_2">{{item.name}}</text>
+                <text class="huijuan_span">{{item.expiry_time}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="tuijian_ma" wx:if="{{tuijian_show}}">
+    <input type="text" placeholder="输入推荐码享优惠惊喜" bindinput="tuijian_change" />
+    <text class="tuijian_ma_ok" bindtap="tuijiu_click">确认</text>
+</view>
+
+<view class="jingpin">
+    <view class="jingpin_ul">
+        <block wx:for="{{list.swagGoods}}" wx:key="index">
+            <view class="jingpin_li" wx:if="{{item.jx_img_url}}">
+                <navigator url="../goodsInfo/GoodsInfo?id={{item.sg_id}}"  hover-class="none">
+                    <image src="{{item.jx_img_url}}" alt="" mode="widthFix" />
+                    <view class="jingpin_li_div">
+                        <view class="jingpin_li_p">{{item.sg_name}}</view>
+                        <text>销量 <text>{{item.sg_sales == '0' ? item.sg_moni : item.sg_sales}}</text></text>
+                    </view>
+                    <view class="jingpin_li_div">
+                        <view>{{item.sg_describe}}</view>
+                        <view>原价 <text>￥{{item.sg_y_price}}</text></view>
+                        <view>现价 <text>￥{{item.sg_price}}</text></view>
+                    </view>
+                    <view class="jingpin_li_div">
+                        <view><text>精品\n推荐</text></view>
+                        <view>
+                            <view></view>
+                            <view></view>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+        </block>
+    </view>
+</view>
+
+<view class="main_list">
+    <view class="main_list_ul" id="box">
+        <view wx:for="{{fenlei_left_list}}" wx:key="index" class="main_list_li {{fenlei_left_active == index ? 'active' : ''}}"  data-id="{{item.so_id}}" data-index="{{index}}" bindtap="fenlei_leftclick">
+            <view class="main_list_li_p">{{item.so_name}}</view>
+            <view class="main_list_li_span">{{item.so_name_des}}</view>
+            <view class="main_list_li_font"></view>
+        </view>
+    </view>
+    <view class="main_list_ul"  style="max-height:{{change_max_height}}">
+        <view class="main_list_li" wx:for="{{fenlei_right_list}}" wx:key="index">
+            <navigator url="../goodsInfo/GoodsInfo?id={{item.sg_id}}"><image src="{{item.sg_img_url}}" alt="" mode='widthFix' /></navigator>
+            <view class="main_list_div">
+                <view class="main_list_div_p"><navigator url="../goodsInfo/GoodsInfo?id={{item.sg_id}}">{{item.sg_name}}</navigator></view>
+                <view class="main_list_div_p">销量<text>{{item.sg_sales == '0'?item.sg_moni:item.sg_sales}}</text></view>
+                <view class="main_list_div_div">
+                    <text class="li_pr">￥{{item.price.price}}</text>
+                    
+                    <view class="main_list_div_div_div">
+                        <view class="li_num_jian" data-index="{{index}}" bindtap="delcar" wx:if="{{item.is_in_car == 1 ? true : false}}">-</view>
+                        <text class="li_num" wx:if="{{item.is_in_car == 1 ? true : false}}">{{item.in_car_num ? item.in_car_num : '0'}}</text>
+                        <view class="li_num_add" data-index="{{index}}" bindtap="addcar">+</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view style="background: #f2f2f2;">
+    <view class="bottom_nav">
+        <view>
+            <navigator url="../UserCenter/userCenter" open-type="switchTab"><image src="http://vsp.mobtop.com.cn/Addons/IdouStore/View/Public/StaticPublic/imgs/mai_ren.png" alt="" /></navigator>
+            <view class="tel_a" data-tel="{{get_title.link_mobile}}" bindtap="tel_click"><image src="http://vsp.mobtop.com.cn/Addons/IdouStore/View/Public/StaticPublic/imgs/mai_tel.png" alt="" /></view>
+            <navigator url="../goodsCar/goodsCar"><image src="http://vsp.mobtop.com.cn/Addons/IdouStore/View/Public/StaticPublic/imgs/mai_car.png" alt="" /><text class="car_num" hidden="{{gouwu.data ? 'false' : 'true'}}">{{gouwu.data}}</text></navigator>
+            <view class="bottom_nav_p">
+                <text class="sum_money">￥{{gouwu.sum_money}}</text>
+                <text>不含运费</text>
+            </view>
+        </view>
+        <navigator url="../goodsCar/goodsCar"><text>付款</text></navigator>
+    </view>
+</view>

@@ -1,0 +1,178 @@
+<import src="../wxParse/wxParse.wxml" />
+<view class="goods-info-container">
+  <!--顶部轮播图-->
+  <swiper class="page-swiper" autoplay="{{false}}" circular="true" indicator-dots="true" indicator-active-color="#b4282d">
+    <block wx:if='{{sg_img_video != "" && sg_img_video != null}}'>
+      <swiper-item>
+        <video src='{{sg_img_video}}' controls='true'></video>
+      </swiper-item>
+    </block>
+    <block wx:for="{{listx.banner}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+
+
+  <!--商品信息-->
+ <view class="goods-info-box text-white">
+    <view class="padding-tb-sm flex space-between" style="border-bottom:1rpx solid #fff">
+      <text class="bold text-name spec_name">商品名称:</text>
+      <text class="margin-left-xs text-df good_name">{{goodName}}</text>
+    </view>
+    <view class=" flex space-between padding-tb-sm" style="border-bottom:1rpx solid #fff"> 
+      <view class="left-item flex space-between">
+        <text class="bold text-name" style="flex:0 0 40%;">商品规格:</text>
+        <text class="margin-left-xs text-df guig" wx:if="{{listx.tuan_data.spec_res.length!==0}}">{{goodSpecs1}}/{{goodSpecs2}}/{{goodSpecs3}}</text>
+      </view>
+      <view class="right-item text-r flex">
+        <text class="bold text-name brand">品牌:</text>
+        <text class="text-df goodsBrand">{{goodBrand}}</text>
+      </view>
+    </view>
+    <view class="padding-top-sm flex">
+      <text class="bold text-name spec_name">商品特点:</text>
+      <text class="margin-left-xs text-df">{{goodDesc}}</text>
+    </view>
+ </view>
+ <view class="teJia_box flex space-between">
+  <view class="part_left">
+    <view class="time_tit text-sm text-df text-red">距离结束仅剩</view>
+    <view class="flex space-between padding-tb-xss">
+      <view class="time_box space-between" wx:for="{{countDownList}}"
+       wx:for-index="index"
+        wx:for-item="item"
+        wx:key="index">
+          <view>{{item.hou}}</view>
+          <text>时</text>
+          <view>{{item.min}}</view>
+          <text>分</text>
+          <view>{{item.sec}}</view>
+          <text>秒</text>
+      </view>
+      <view class="old_price margin-lr-xs">
+        <text class="text-sm text-gray" style="text-decoration:line-through">￥{{goodOldprice}}</text>
+      </view>
+      <view class="cu-tag bg-red-wei  sm round text-white">限时拼团特价</view>
+    </view>
+    <view class="flex space-between info_box text-red">
+      <view><text class="text-sm">已拼单{{ypdNum}}人</text></view>
+      <view><text class="text-sm margin-lr-xss"><text>|</text>剩余库存{{listx.tuan_data.stock}}件</text></view>
+      <!-- <view><text class="text-sm margin-right-xss">24小时之内发货</text></view> -->
+    </view>
+  </view>
+  <view class="part_right bold text-red ">
+    ￥<text class="text-sl">{{goodPtprice}}</text>
+  </view>
+  </view>
+
+  <view class="hd_box">
+    <view class="padding-bottom-xs flex">
+      <text class="bold text-df">活动时间:</text>
+      <text class="text-df margin-left-sm text-gray">{{startTime}}-{{endTime}}</text>
+    </view>
+    <view class="padding-bottom-xs">
+      <text class="bold text-df">街道名称:</text>
+      <text class="text-df margin-left-sm text-gray">{{streetName}}</text>
+    </view>
+    <view class="padding-bottom-xs">
+      <text class="bold text-df">自提点位置:</text>
+      <text class="text-df margin-left-sm text-gray">{{ztdAddress}}</text>
+    </view>
+    <view class="flex space-between padding-bottom-xs">
+      <view class="item_view1">
+        <text class="bold text-df">自提点负责人:</text>
+        <text class="text-df margin-left-sm text-gray">{{ztdFzr}}</text>
+      </view>
+      <view class="item_view2" bindtap="makePhone" data-tel="ztdPhone">
+        <text class="bold text-df">手机号:</text>
+        <text class="text-df margin-left-sm text-red">{{ztdPhone}}</text>
+      </view>
+    </view>
+    <checkbox-group bindchange="deliverChange" wx:if="{{is_take_own==2}}">
+      <label class="radio">
+        <checkbox value="1" checked="{{deliver_check}}" color="#b2282e"/>
+        <text class="text-red">如需送货上门另加{{Distribution}}元配送费，限本社区内(自由提点送货上门)</text>
+      </label>
+    </checkbox-group>
+  </view>
+  <view>
+    <view class="text-c bold role-text text-df padding-sm">
+      北蒙生活馆线上商品限时拼团活动规则
+    </view>
+    <view class="padding-lr-xl" style="height:{{height}}">
+      <template is="wxParse" data="{{wxParseData:detail_notice.nodes}}" />
+    </view>
+    <view bindtap="showRolesdetail" class="margin-top-sm">
+      <view class="text-red text-c">
+        点击查看完整活动规则
+      </view>
+      <view class="text-c">
+        <image class="arrow_img {{height=='auto' ? 'arrow_rotate' :''}}" mode="widthFix" src="../../static/imgs/arrow.png"></image>
+      </view>
+    </view>
+    <view class="padding-lr-xl">
+      <template is="wxParse" data="{{wxParseData:sg_detail.nodes}}" />
+    </view>
+   
+  </view>
+ </view>
+
+  <!--商品选择信息-->
+  <action-sheet hidden="{{goodsChoiceHidden}}" bindchange="goodsChoiceChange">
+    <view class="goodsChoicePop">
+      <block v-if="{{listx}}">
+        <view class="goodsInfo">
+          <image src="{{listx.banner[0]}}" class="image" />
+          <view class="info">
+            <view class="word">{{listx.tuan_data.sg_name}}</view>
+            <view class="text-df text-red">¥ {{listx.tuan_data.tuan_price}}</view>
+          </view>
+        </view>
+        <view class="numbox">
+          <view class="stock">库存:{{listx.tuan_data.stock}}</view>
+          <view class="nums">
+            <text>数量</text>
+            <view class="nbr nbr-l" data-goodsnum="{{goodsNum}}" bindtap="handleReduce">-</view>
+            <input class="text-df nbr-m" type="number" value="{{goodsNum}}" placeholder-style="color:#333;" bindinput="handleGoodsNum"/>
+            <view class="nbr nbr-r" data-goodsnum="{{goodsNum}}" bindtap="handleIncrease">+</view>
+          </view>
+        </view>
+      </block>
+      <button 
+        url="../confirmOrder/confirmOrder?id={{sg_id}}"
+        data-orid="{{sg_id}}"
+        data-deliver="{{is_delivery}}"
+        data-tid="{{listx.tuan_data.id}}"
+        class="footerBtn text-sl bold activeBtn"
+        bindtap="getInfo"
+      >立即拼单</button>
+    </view>
+    
+  </action-sheet>
+
+  <!--底部固定内容-->
+  <view id="footer">
+    <view class="agreeBox">
+      <checkbox-group bindchange="checkboxChange">
+      <label class="radio" role="checkbox">
+        <checkbox value="1" checked="{{xieyi_check}}" color="#b2282e"/>
+        <text class="text-red">同意遵循以上活动规则！</text>
+      </label>
+    </checkbox-group>
+    </view>
+    <!-- <view url="../confirmOrder/confirmOrder?id={{listx.sg_id}}" data-orid="{{listx.sg_id}}" data- class="footerBtn text-sl bold" bindtap="getInfo">
+      立即拼单
+    </view> -->
+    <view data-orid="{{listx.sg_id}}" wx:if="{{state==3}}" class="footerBtn text-sl bold activeBtn" bindtap="goodsChoiceChange">
+      立即拼单
+    </view>
+    <view data-orid="{{listx.sg_id}}" wx:else class="footerBtn text-sl bold grayBtn">
+      立即拼单
+    </view>
+  </view>
+
+
+<!-- <loading hidden="{{onOff}}"></loading> -->

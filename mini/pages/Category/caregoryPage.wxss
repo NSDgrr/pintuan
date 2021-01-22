@@ -1,0 +1,129 @@
+/* caregoryPage.wxss */
+
+.search-box{
+    font-size:24rpx;
+    background:#fff;
+    padding:20rpx 40rpx;
+}
+.search{
+    width:100%;
+    height:60rpx;
+    background:#eee;
+    line-height:60rpx;
+    border-radius:8rpx;
+    text-align:center;
+}
+.content{
+    display:flex;
+    /* height:1000rpx; */
+    height:calc(100% - 100rpx);
+    overflow: hidden;
+    background: #fff;
+    border-top:1px solid #ddd;
+}
+.scroll-height{
+    height:976rpx;
+    padding-bottom:20rpx;
+}
+.cont-left{
+    flex:0 0 165rpx;
+    border-right:1px solid #ddd;
+    background: #efefef;
+}
+.cont-left .shop-nav{
+    width:80%;
+    font-size:26rpx;
+    text-align:center;
+    padding: 15rpx 15rpx;
+    line-height:50rpx;
+    background:#efefef;
+}
+.cont-left .active{
+    font-size:26rpx;
+    color:#b4282d;
+    border-left:3px solid #b4282d;
+    background: #fff
+    
+}
+.cont-right{
+    flex:1;
+    padding:30rpx;
+}
+.cont-right scroll-view{
+    height:1000rpx;
+}
+.cont-right .shop-list{
+  /* display: none; */
+}
+.cont-right .active{
+  display: block;
+}
+.banner{
+    
+}
+.banner image{
+    width:100%;
+    height:200rpx;
+}
+.type-list{
+    /*padding:30rpx;*/
+}
+.type-tit{
+    width:100%;
+    height:80rpx;
+    position:relative;
+}
+.tit-border{
+    top:40rpx;
+    left:50%;
+    height:1px;
+    width:300rpx;
+    background:#eee;
+    position:absolute;
+    margin-left:-150rpx;
+}
+.tit-name{
+
+    top:0;
+    left:50%;
+    width:200rpx;
+    font-size:28rpx;
+    position:absolute;
+    text-align:center;
+    line-height:80rpx;
+    background: #fff;
+    margin-left:-100rpx;
+}
+.title{
+  font-size:24rpx;
+}
+.list-cont{
+    display:flex;
+    flex-flow: wrap;
+}
+.shop-item{
+    flex:0 0 30%;
+    margin-right:5%;
+    padding-top:30rpx;
+    text-align:center;
+}
+.shop-item:nth-child(3n){
+    margin-right:0;
+}
+.shop-item image{
+    width:100%;
+    height:140rpx;
+}
+.shp-name{
+    font-size:28rpx;
+}
+.histroysearch{
+  display: flex;
+  flex-wrap:nowrap;
+}
+::-webkit-scrollbar {
+ width: 0;
+ height: 0;
+ color: transparent;
+}
+/* table */

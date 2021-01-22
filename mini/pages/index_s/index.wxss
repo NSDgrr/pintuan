@@ -1,0 +1,194 @@
+/**index.wxss**/
+::-webkit-scrollbar {
+ width: 0;
+ height: 0;
+ color: transparent;
+}
+.page-swiper{
+    width: 100%;
+    height: 400rpx;
+}
+.page-swiper .slide-image{
+    width: 100%;
+    height: 400rpx;
+}
+/*推荐商品*/
+.goods-items{
+    background: #fff;
+    padding: 0 30rpx;
+}
+.groom{
+    text-align: center;
+    height: 100rpx;
+    line-height: 100rpx;
+    color: #333;
+    font-size: 30rpx;
+}
+.goods-view-item-1{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+.goods-view-item-1 .goods-ad-item-1{
+    flex: 0 0 48%;
+    width: 48.5%;
+    background: #f5f5f5;
+    font-size: 34rpx;
+    padding: 16rpx;
+    box-sizing: border-box;
+    border-radius: 10rpx;
+    color: #333;
+    margin-bottom: 30rpx;
+}
+.goods-view-item-1 .goods-ad-item-1>text{
+    width: 80%;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.goods-ad-item-1 .goods-message{
+    display: flex;
+}
+.goods-ad-item-1 image{
+    flex: 0 0 150rpx;
+    width: 100%;
+}
+.goods-ad-item-1 .goods-message .goods-info{
+    flex: 1;
+    margin-right: 20rpx;
+}
+.goods-ad-item-1 .goods-message .goods-info>text{
+    display: block;
+    font-size: 26rpx;
+    margin-top: 8rpx;
+}
+.goods-ad-item-1 .goods-message .goods-info .tags{
+    border-radius: 2rpx;
+    text-align: center;
+    width: 70rpx;
+}
+/*横幅广告*/
+.ad-banner{
+    width: 100%;
+    height: 260rpx;
+}
+.ad-banner image{
+    width: 100%;
+    height: 260rpx;
+}
+/*横向滚动商品列表*/
+.width-scroll-container{
+    background: #fff;
+    white-space: nowrap;
+    display: flex;
+    overflow-x: auto;
+    padding: 20rpx 0;
+}
+.width-scorll-item{
+    display: inline-block;
+    width: 280rpx;
+    margin-left: 30rpx;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.width-scorll-item:last-of-type{
+    margin-right: 30rpx;
+}
+.width-scorll-item .scroll-item-img{
+    width: 280rpx;
+    height: 280rpx;
+    background: #f4f4f4;
+}
+.scroll-item-info{
+    width: 280rpx;
+    overflow: hidden;
+}
+
+.scroll-item-info .textShow{
+    font-size: 30rpx;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.scroll-item-info .title{
+    font-size: 28rpx;
+    color: #999;
+}
+
+/*专题精选*/
+.topic-container{
+    background: #fff;
+}
+.topic-container .topic-info{
+    width: 100%;
+}
+.topic-info image{
+    width: 100%;
+    height: 420rpx;
+}
+.topic-info .topic-header-text{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30rpx;
+    font-size: 30rpx;
+}
+.topic-info .topic-header-text .name{
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+}
+.topic-info .topic-header-text .price{
+    flex: 0 0 auto;
+}
+.topic-info .topic-header-tips{
+    font-size: 24rpx;
+    color: #999;
+    padding: 10rpx 30rpx;
+}
+
+/*商品列表*/
+ .goods-container{
+    background: #fff;
+}
+.goods-list{
+  display: inline-block;
+}
+.goods-container .goods-list{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap;
+    padding: 0 30rpx;
+}
+.goods-container .goods-list .goods-item-warp{
+    flex: 0 0 48.5%;
+    overflow: hidden;
+    margin-bottom: 30rpx;
+} 
+.goods-container .goods-list .goods-item-warp image{
+    width: 345rpx;
+    height: 345rpx;
+    background: #f4f4f4;
+    display: block;
+}
+
+.goods-container .goods-list .goods-item-warp .one-line{
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 30rpx;
+}
+
+.goods-container .goods-list .goods-item-warp .tags{
+    width: 100%;
+    background: #F1ECE2;
+    font-size: 26rpx;
+    color: #9F8A60;
+    padding: 10rpx 20rpx;
+} 
+

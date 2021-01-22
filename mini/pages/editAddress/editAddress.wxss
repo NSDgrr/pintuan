@@ -1,0 +1,38 @@
+/* pages/editAddress/editAddress.wxss *//* pages/addAddress/addAddress.wxss */
+.addAddress-container{
+  background: #fff;
+}
+.addAddress-container>view{
+  padding: 20rpx 0;
+  margin: 0 30rpx;
+  font-size: 28rpx;
+  border-bottom: 1px solid #999;
+}
+.addAddress-container>view.defalut{
+  border-bottom: none;
+  display: flex;
+  justify-content: center;
+}
+.addAddress-container>view.defalut label{
+  display: flex;
+  align-items: center;
+}
+checkbox .wx-checkbox-input{
+  border-radius: 50%;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #b2282e;
+  border: 1px solid #b2282e;
+}
+
+.save{
+  font-size: 28rpx;
+  background: #b2282e;
+  text-align: center;
+  padding: 20rpx 0;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}

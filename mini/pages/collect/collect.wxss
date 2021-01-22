@@ -1,0 +1,74 @@
+/* pages/collect/collect.wxss */
+
+.collect-deal view{
+  display: flex;
+  justify-content: space-between;
+  padding: 15rpx 30rpx;
+  font-size: 28rpx;
+  background: #fff;
+}
+.collect-deal view.cancel{
+  display: none;
+}
+.collect-deal.show view.cancel{
+  display: flex;
+}
+.collect-deal.show view.edit{
+  display: none;
+}
+.collect-con icon{
+  display: none;
+}
+.collect-con.show icon{
+  display: block;
+}
+.collect-con{
+  padding: 8rpx 8rpx 0;
+  display: flex; 
+  font-size: 28rpx;
+  text-align: center;
+}
+.collect-con>view{
+  width: 100%;
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20rpx;
+}
+.collect-con-con{
+  margin: 14rpx 0;
+  width: 48%;
+  background: #fff;
+  position: relative;
+}
+.collect-con .cart-pro-select{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.collect-con image{
+  width: 100%;
+  height: 300rpx;
+}
+ .collect-con text{
+  padding-left: 10rpx;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-bottom: 10rpx;
+  display: block;
+} 
+ .collect-con text.price{
+   text-align: left;
+   color: #ff0000;
+} 
+.cart-no-data{
+  text-align: center;
+  width: 100%;
+  color: #999;
+  font-size: 32rpx;
+  padding: 20rpx 0;
+}

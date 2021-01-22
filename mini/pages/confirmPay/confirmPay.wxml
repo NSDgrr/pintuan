@@ -1,0 +1,26 @@
+<!--pages/confirmPay/confirmPay.wxml-->
+<view class="confirmPay-container">
+  <view class='confirmPay-num'>
+    <view>订单号：<text>{{order_num}}</text></view>
+    <text class='price'>￥{{shop_value}}</text> 
+  </view>
+</view>
+<view class="pay-way">
+  <view class="pay-title">请选择付款方式</view>
+  <view class="way">
+    <radio-group class="radio-group" bindchange="radioval">
+        <view wx:if="{{flg_obj.wechar_pay_true == '1'}}">
+          <label class="radio"><text class="iconfont icon-weixinzhifu" style="font-size:18px;margin-right:5px;"></text> {{flg_obj.wechat_pay}}</label>
+          <radio color='#b2282e' value="1" checked='true'/>
+        </view>
+        <view wx:if="{{flg_obj.balance_pay_true == '1'}}">
+          <label class="radio"><text class="iconfont icon-membership-card_icon" ></text> {{flg_obj.balance_pay}}(￥{{yue_num}})</label>
+          <radio color='#b2282e' value="2"/>
+        </view>
+    </radio-group>
+  </view>
+</view>
+
+<button class='pay-speed' bindtap='pay'>立即支付</button>
+
+

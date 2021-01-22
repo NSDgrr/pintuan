@@ -1,0 +1,42 @@
+<!--pages/banerList/banerList.wxml-->
+<view class="header">
+  <image class="header_img" mode="widthFix" src="{{bannerSrc}}"></image>
+</view>
+
+<view class="cu-card article isCard">
+  <view class="cu-item shadow" wx:for="{{tuanList}}" wx:for-index="index" wx:for-item="item">
+    <view class="content" bindtap="goDetail" data-id="{{item.id}}" data-key="{{item.sid}}">
+      <view data-id="{{item.id}}" data-key="{{item.sid}}">
+        <image class="bktj_img" mode="widthFix" src='../../static/imgs/bktj.png'></image>
+      </view>
+      <view class="img_box">
+        <view data-id="{{item.id}}" data-key="{{item.sid}}">
+          <image src="{{item.sg_img_url}}" mode="aspectFill"></image>
+        </view>
+      </view>
+      <view class="desc">
+        <view class="goods_tit">
+          <view class="flex space-between" data-id="{{item.id}}" data-key="{{item.sid}}">
+            <text class="text-name sg_name">{{item.sg_name}}</text>
+            <!-- <text class="gray margin-left-xs block flex align-end">/254g袋</text> -->
+          </view>
+        </view>
+        <view class="text-content text-xs gray"> {{item.sg_describe}}</view>
+        <view class="flex space-between align-end price_box">
+            <text class="bg-white text-sm gray">原价￥{{item.price}}</text>
+            <text class="text-sm text-red">
+              拼团价<text class="text-xxl text-red">￥{{item.tuan_price}}</text>
+            </text> 
+          <!-- <view class="add">
+            +
+          </view> -->
+        </view>
+        <view class="space-between padding-top-xs">
+          <view class="cu-tag bg-red light sm round fl" wx:if="{{item.sg_tag}}">{{item.sg_tag}}</view>
+          <view class="bg-white text-xs gray fr">已拼单{{item.tuan_num}}人</view>
+          <!-- <view class="bg-white text-xs gray">24小时内发货</view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

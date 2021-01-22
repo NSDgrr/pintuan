@@ -1,0 +1,104 @@
+<scroll-view scroll-y="true" style="height:{{height}}px;" bindscrolltoupper="upper" bindscrolltolower="lower"               scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+<!-- search搜索框 -->
+<view id="search-box" class="containsView">
+  <!-- 跳转首页 -->
+    <navigator class='indexBack' url='../Category/caregoryPage' open-type="switchTab">
+      <!-- <text class="iconfont icon-shouye"></text> -->
+      <image src="../../static/imgs/Category.png" style="width:32rpx;height:32rpx;"></image>
+    </navigator> 
+
+     <view class="flex">
+        <input id="keysearch" bindinput="bindKeyInput" bindconfirm="Historyclick" class="input search" placeholder='搜索商品' 
+     value="{{hotsearch}}">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <text class="iconfont icon-search"></text>
+        搜索商品
+    </input>
+    </view> 
+    <view>
+     <view class="btn-search" bindtap="yangshi_qie"><image src="../../static/imgs/fenlei.png" style="width:32rpx;height:32rpx;"></image></view> 
+    </view>
+
+</view>
+
+<!--历史搜索-->
+  <!-- <view class="histroysearch">历史搜索： -->
+     <!--list start-->
+  <!-- <view class="seachlist"> -->
+  <!-- <block wx:for="{{list2}}" wx:for-item="itemWord" wx:for-index="idx" wx:key="idx"> -->
+    <!-- <button data-name="{{itemWord}}" class="button searchbtn"  wx:if="{{itemWord != ''}}" bindtap="clickName">{{itemWord}}</button> -->
+  <!-- </block> -->
+    
+  <!-- </view> -->
+  <!-- list end -->
+  
+
+  <!-- </view> -->
+
+
+
+  <!-- 搜索后显示视图 -->
+
+ 
+  <!-- <button style="display:block;" bindtap="clearSearchStorage" class='clearhistroy'>清除历史记录</button> -->
+
+<!-- tab 选项卡 -->
+ <view class='goods-tab-box'>
+      <view class='goods-tab' bindtap='tabFun'>
+        <view class="{{tabArr.curHdIndex=='0'? 'active' : ''}}"  data-id="0">
+
+          综合
+          <view></view>  
+        </view>
+        <view class="{{tabArr.curHdIndex=='1'? 'active' : ''}}" data-id="1">
+          销量
+          <view></view> 
+        </view>
+        <view class="{{tabArr.curHdIndex=='2'? 'active' : ''}}" data-id="2">
+          新品
+          <view></view>
+        </view>
+         <view class="{{tabArr.curHdIndex=='3'? 'active' : ''}}" data-id="3">
+          价格
+          <view></view>
+        </view>
+      </view>
+    </view>
+
+
+  <!-- 搜索后显示内容 -->
+<view class="{{qiehuan_css == '0'?'goods-container':'goods-container_s'}} baseMarginTop">
+        <view class="goods-list">
+          <block wx:for="{{lists}}" wx:key="{{index}}">
+              <view hover-class="none" bindtap="details" data-id="{{item.sg_id}} " class="goods-item-warp">
+                   <image src="{{item.sg_img_url}}" mode="widthFix"></image>
+                  <!-- <view class="tags one-line">进口防螨布，热销50万件进口防螨布，热销50万件</view> -->
+                  <view class="one-right" wx:if="{{qiehuan_css == '1'}}">
+                    <view class="names one-line">{{item.sg_name}}</view>                  
+                    <!-- <view class="titles">
+                        <span class="hot hot1">爆品</span>
+                        <span class="hot hot2">爆品</span>
+                    </view> -->
+                    <view class="prices one-line mainColor">￥{{item.price?item.price.price:item.sg_price}}</view>
+                  </view>
+                  <block wx:if="{{qiehuan_css == '0'}}">
+                    <view class="names one-line">{{item.sg_name}}</view>                  
+                    <!-- <view class="titles">
+                        <span class="hot hot1">爆品</span>
+                        <span class="hot hot2">爆品</span>
+                    </view> -->
+                    <view class="prices one-line mainColor">￥{{item.price?item.price.price:item.sg_price}}</view>
+                  </block>
+              </view>
+          </block>
+        </view>
+
+    </view>
+
+</scroll-view> 
+
+<view>  
+    <loading hidden="{{hidden}}" bindchange="loadingChange">  
+    {{load}}  
+    </loading>  
+</view> 

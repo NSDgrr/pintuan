@@ -1,0 +1,35 @@
+<!--pages/getAddress/getAddress.wxml-->
+<view class="getAddress-container">
+  <view class="getAddress-info">
+    <radio-group>
+      <view wx:for="{{carts}}" wx:key="{{index}}" class="getAddress-list">
+        <view class="getAddress-con">
+          <view>
+            <view class="person-info">
+              <text>{{item.sa_name}}</text>
+              <text>{{item.sa_tel}}</text>
+            </view>
+            <text>{{item.sa_city}}{{item.sa_area}}{{item.sa_detail_addr}}</text>
+          </view>
+
+          <icon wx:if="{{item.sa_addr_true==1}}" type="success" color="#b2282e" data-index="{{index}}"  class="cart-pro-select"  bindtap="selectList"/>
+          <icon wx:else type="circle" class="cart-pro-select" data-index="{{index}}" bindtap="selectList"/>
+        </view>
+        <view class="getAddress-btn">
+
+          <view class='edit'>
+            <navigator url="../editAddress/editAddress" data-addressDetails="{{item}}" data-editType="0" bindtap='addressDetailsM'>
+              修改              
+            </navigator>
+          </view>
+          <view bindtap="deleteList" data-index="{{index}}" data-id="{{item.sa_id}}">删除</view>
+        </view>
+      </view>
+    </radio-group>
+  </view>
+  
+  <view style="height:39px;"></view>
+  <view class="add-address">
+    <view bindtap='addAddress' data-editType="1" >新建收货地址</view>
+  </view>
+</view>

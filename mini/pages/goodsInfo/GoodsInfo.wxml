@@ -1,0 +1,237 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class="goods-info-container">
+  <!--顶部轮播图-->
+  <swiper class="page-swiper" autoplay="{{false}}" circular="true" indicator-dots="true" indicator-active-color="#b4282d">
+    <block wx:if='{{sg_img_video != "" && sg_img_video != null}}'>
+      <swiper-item>
+        <video src='{{sg_img_video}}' controls='true'></video>
+      </swiper-item>
+    </block>
+    <block wx:for="{{listx.sg_lun}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!--商品信息-->
+  <view class='price'>
+    <view class="now">￥
+      <text>{{shop_price}}</text>
+    </view>
+    <view class="origin" style="flex:1;">原价：￥{{shop_price_y}}</view>
+    <view class='addGoodsCar shoucang {{showView?"true":""}}' bindtap="onChangeShowState">
+      <text class='iconfont icon-qunfengshoucang' style="display:block;"></text>
+      <text class='collect' wx:if="{{showView == false}}" data-state='0'>收藏</text>
+      <text class='cancel' wx:else data-state='1'>取消</text>
+    </view>
+  </view>
+  <view class='goods-info'>
+    <view class="goods-info-title">
+      <view><text class="biaoqian" wx:if="{{listx.sg_tag}}">{{listx.sg_tag}}</text><text style="font-weight:bold;font-size:30rpx;">{{listx.sg_name}}</text></view>
+    </view>
+    <view class="maidian">
+      <text>{{listx.sg_describe}}</text>
+    </view>
+  </view>
+
+  
+
+
+
+  <view class='group' wx:for="{{listx.specData}}" wx:for-item="spec1" wx:key="index" wx:for-index='outindex'>
+    <text>{{spec1.ssm_name}}</text>
+
+    <!-- 循环嵌套 -->
+    <view class="group-con" bindtap='tab' wx:for-index='index' wx:for="{{spec1.minData}}" wx:key="index">
+
+      <view class="{{tabIndex[outindex]==index?'active':''}}" data-id='{{index}}' data-box='{{outindex}}'>{{item.sms_name}}</view>
+    </view>
+  </view>
+
+  <view class='num'>
+    <text>数量:</text>
+    <view class='change'>
+      <text class='iconfont icon-jianhaob' bindtap="bindMinus"></text>
+      <view class="goods-num">
+        <input type="number" bindchange="bindManual" value="{{num}}" />
+      </view>
+      <text class='iconfont icon-jiahaob' bindtap="bindPlus"></text>
+    </view>
+    <view class="store">库存：
+      <text>{{shop_stock}}</text>
+    </view>
+  </view>
+
+  <view class="lingquan" bindtap="lingquan_click" wx:if="{{youhui_list.length > 0}}">
+    <view>领券</view>
+    <view>
+      <text wx:for="{{youhui_list}}" wx:key="index">{{item.name}}</text>
+    </view>
+    <text class="iconfont icon-arrow"></text>
+  </view>
+
+  <view class='goods-tab-box'>
+    <view class='goods-tab' bindtap='tabFun'>
+      <view class="{{tabArr.curHdIndex=='0'? 'active' : ''}}" data-id="0">
+        商品介绍
+        <view></view>
+      </view>
+      <view class="{{tabArr.curHdIndex=='1'? 'active' : ''}}" data-id="1">
+        规格参数
+        <view></view>
+      </view>
+      <view bindtap='evaluation' class="{{tabArr.curHdIndex=='2'? 'active' : ''}}" data-id="2">
+        商品评价
+        <view></view>
+      </view>
+    </view>
+  </view>
+  <view class="goods-tab-list">
+    <!-- 商品介绍 -->
+    <view class="{{tabArr.curBdIndex=='0'? 'active' : ''}}">
+      <view class="img-show">
+        <template is="wxParse" data="{{wxParseData:wxhtml.nodes}}" />
+      </view>
+    </view>
+
+    <!-- 规格参数 -->
+    <view class="{{tabArr.curBdIndex=='1'? 'active' : ''}}">
+      <view class="img-show">
+
+        <!-- table  start   type==1  -->
+        <block class="table" wx:if="{{showType == 1}}">
+          <view class="tr bg-w">
+            <view class="th flo-max"></view>
+          </view>
+          <block wx:for="{{listData}}" wx:key="code">
+            <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+              <view class="td">{{item.code}}</view>
+              <view class="td">{{item.text}}</view>
+            </view>
+            <view class="tr" wx:else>
+              <view class="td">{{item.code}}</view>
+              <view class="td">{{item.text}}</view>
+            </view>
+          </block>
+        </block>
+        <!-- tyep ==2  Image Text-->
+        <block class='ImageT' style='background:grey;height:100px;' wx:else>
+          <template is="wxParse" data="{{wxParseData:spexhtml.nodes}}" />
+        </block>
+      </view>
+    </view>
+
+    <!-- 商品评价 -->
+    <view class="{{tabArr.curBdIndex=='2'? 'active' : ''}}">
+      <view class="goods-evalute">
+        <!-- 选择评价 -->
+        <view class='evalute-box'>
+          <view class="evalute" bindtap='tabFun2'>
+            <view class="{{tabArr2.curBfIndex=='0'?'active':''}}" data-id="0">全部</view>
+            {{carts[0].nums[0].text}}
+            <view class="{{tabArr2.curBfIndex=='1'?'active':''}}" data-id="1">好评</view>
+            <view class="{{tabArr2.curBfIndex=='2'?'active':''}}" data-id="2">中评</view>
+            <view class="{{tabArr2.curBfIndex=='3'?'active':''}}" data-id="3">差评</view>
+          </view>
+        </view>
+
+        <view class='evalute-info'>
+          <!-- 全部评价 -->
+          <view class="active">
+            <view wx:if="{{hasList}}">
+              <view class="evalute-con" wx:for="{{carts}}" wx:key="index">
+                <view>
+                  <view class="protrait">
+                    <image src="{{item.user.headimgurl}}" />
+                  </view>
+                  <view class='name'>
+                    <view>{{item.user.nickname}}</view>
+                    <view class='date'>{{item.sgc_create_time}}</view>
+                  </view>
+                  <view class="pingfen">
+                    <view wx:for="{{item.nums}}" wx:for-item="star" wx:key="id">
+                      <image class="img" src="{{star.src}}" />
+                    </view>
+                  </view>
+                </view>
+                <view class='pinlun-con'>
+                  {{item.sgc_content}}
+                </view>
+                <view style="display:flex;justify-content: space-between;">
+                  <image wx:for="{{item.img}}" wx:for-item="e" wx:key="i" data-src="{{e}}" data-list="{{item.img}}" src="{{e}}" style="width:32%;" mode="widthFix" bindtap='imgYu'/>
+                </view>
+                <view class="btn">
+                  <navigator hover-class='none' url="../evaluteDetail/evaluteDetail?id={{item.sgc_id}}&title={{listx.sg_name}}&img={{listx.sg_lun[0]}}&nameping={{item.sgc_content}}&usernameimg={{item.user.headimgurl}}&username={{item.user.nickname}}&usernamedata={{item.sgc_create_time}}">
+                    <button class='pinlun'>
+                      <text class="iconfont icon-pinglun3"></text> 评论</button>
+                  </navigator>
+                  <button bindtap='onChangeFlagState' data-index='{{index}}' class='zan {{item.is_click == "1"?"changeColor":""}}'>
+                    <text class="iconfont icon-dianzan"></text>{{item.sgc_click}}</button>
+                </view>
+              </view>
+            </view>
+            <view wx:else>
+              <view>----暂无评论----</view>
+            </view>
+          </view>
+          <!-- 好评 -->
+
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--商品选择信息-->
+
+  <!--底部固定内容-->
+  <view id="footer">
+    <navigator url="../index/index" class="addGoodsCar_s" open-type="switchTab">
+      <text class='iconfont icon-shouye' style="position:relative;top:-1px;"></text>
+    </navigator>
+    <view url="../index/index" class="addGoodsCar_s" bindtap="tels">
+      <text class='iconfont icon-kefu' style="position:relative;top:-1px;"></text>
+    </view>
+    <navigator url="../goodsCar/goodsCar" class="addGoodsCar_s" style="position: relative;">
+      <text class='iconfont icon-gouwuche'></text>
+      <text class="num_text" wx:if="{{goshopnum != 0}}">{{goshopnum}}</text>
+    </navigator>
+    <view class="footerBtn mainBg" bindtap='onShowToast' style="background:#ffb03f;">
+      加入购物车
+    </view>
+    <view url="../confirmOrder/confirmOrder?id={{listx.sg_id}}" data-orid="{{listx.sg_id}}" data- class="footerBtn" bindtap="getInfo" style="background:#b4282d;color:#fff;">
+      立即购买
+    </view>
+  </view>
+
+  <view class="lingqu_model" wx:if="{{youhui_showhide}}">
+    <view class="lingqu_model_top" bindtap="lingquan_hide"></view>
+    <view class="lingqu_model_con">
+      <view class="lingqu_title">领取优惠券 <text bindtap="lingquan_hide">×</text></view>
+      <view class="lingqu_ul">
+
+        <view class="lingqu_li active" wx:for="{{youhui_list}}" wx:key="index" data-id='{{item.id}}' bindtap="lin_youhui">
+          <view class="l_li_left">
+            <view wx:if='{{item.coupon_type == "1"}}'>￥<text>{{item.type_val}}</text></view>
+            <view wx:if='{{item.coupon_type == "2"}}'><text>{{item.type_val}}</text> 折</view>
+            <view wx:if='{{item.coupon_type == "3"}}'>￥<text>{{item.type_val}}</text></view>
+            <view wx:if='{{item.coupon_type == "4"}}'>￥<text>{{item.type_val}}</text></view>
+            <view>{{item.name}}</view>
+            <view>有效期限：{{item.expiry_time}}</view>
+          </view>
+          <view class="l_li_right">
+            <text wx:if="{{item.coupon_type == '1'}}">立即领取</text>
+            <text wx:else>可使用</text>
+          </view>
+          <text class="l_li_span_top"></text>
+          <text class="l_li_span_bot"></text>
+        </view>
+
+      </view>
+    </view>
+  </view>
+
+
+
+</view>
+<!-- <loading hidden="{{onOff}}"></loading> -->

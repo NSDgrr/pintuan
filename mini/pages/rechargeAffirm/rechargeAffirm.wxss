@@ -1,0 +1,66 @@
+page{background: #f1f1f1;}
+.head{
+  background: #fff;
+  text-align: center;
+  font-size:24rpx;
+  padding:20rpx 0;
+  margin-bottom: 10px;
+}
+.head view{color: #b4282d;}
+.head view:nth-child(2){
+  font-size:40rpx;
+  font-weight: bold;
+  margin:20rpx 0;
+}
+.fangshi{
+  background: #fff;
+  padding:30rpx;
+  margin-bottom:10px;
+}
+.fangshi view:nth-child(1){
+  font-size:32rpx;
+  margin-bottom:30rpx;
+}
+.fangshi view:nth-child(2){
+  font-size:24rpx;
+}
+.fangshi view:nth-child(2) text{
+  font-size:30rpx;
+  color: #62b900;
+}
+
+.fapiao{
+  background: #fff;
+  padding:30rpx;
+  margin-bottom: 30px;
+}
+.fapiao>view{
+  display: flex;
+  align-items: center;
+}
+.fapiao>view:nth-child(2){
+  margin-top:10px;
+}
+.fapiao>view text{
+  font-size:24rpx;
+  width:140rpx;
+}
+.fapiao>view view{
+  width:calc(100% - 140rpx);
+  border: 1px solid #eee;
+  border-radius: 8rpx;
+  padding:6rpx 20rpx;
+}
+.fapiao>view view input{
+  border: none;
+  font-size:24rpx;
+  height:26px;
+}
+.fapiao>view view picker{
+  border: none;
+  font-size:24rpx;
+  height:26px;
+  line-height: 26px;
+}
+.btn_chong{background: #b4282d;margin:0 15px 8px;padding:13px 0;text-align: center;color: #fff;font-size:24rpx;border-radius: 8rpx;}
+

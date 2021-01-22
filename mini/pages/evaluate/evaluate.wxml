@@ -1,0 +1,25 @@
+<view class="head">
+  评分:
+  <text class="iconfont icon-star {{xing >= 1?'active' : ''}}" data-index='1' bindtap="xingindex"></text>
+  <text class="iconfont icon-star {{xing >= 2?'active' : ''}}" data-index='2' bindtap="xingindex"></text>
+  <text class="iconfont icon-star {{xing >= 3?'active' : ''}}" data-index='3' bindtap="xingindex"></text>
+  <text class="iconfont icon-star {{xing >= 4?'active' : ''}}" data-index='4' bindtap="xingindex"></text>
+  <text class="iconfont icon-star {{xing >= 5?'active' : ''}}" data-index='5' bindtap="xingindex"></text>
+</view>
+<view class="title">评价内容：</view>
+<textarea bindinput="textchange"></textarea>
+<view class="flie_up">
+  <view bindtap="flie_upload" data-index="0">
+    <image wx:if="{{flieList[0]}}" src="{{flieList[0]}}"></image>
+    <text wx:else>+</text>
+  </view>
+  <view bindtap="flie_upload" data-index="1">
+    <image wx:if="{{flieList[1]}}" src="{{flieList[1]}}"></image>
+    <text wx:else>+</text>
+  </view>
+  <view bindtap="flie_upload" data-index="2">
+    <image wx:if="{{flieList[2]}}" src="{{flieList[2]}}"></image>
+    <text wx:else>+</text>
+  </view>
+</view>
+<view class="submit_btn" bindtap="submit_btn">立即评价</view>

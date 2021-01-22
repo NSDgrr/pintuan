@@ -1,0 +1,44 @@
+page{background: #fff;}
+.header{
+  text-align: center;
+  margin: 100rpx auto;
+}
+.header text{
+  margin-top: 40rpx;
+  display: block;
+}
+.header view{
+  margin-top: 40rpx;
+  display: block;
+  font-size:32rpx;
+  color: #666;
+}
+.main{
+  position: fixed;
+  bottom: 40%;
+  text-align: center;
+  width: 100%;
+}
+.main text:nth-child(1){
+  display: block;
+  border: 1px solid #09bb07;
+  background: #09bb07;
+  color: #fff;
+  width:94%;
+  margin: 0 auto;
+  margin-bottom: 30rpx;
+  padding:15rpx 0;
+  border-radius: 8rpx;
+  font-size: 32rpx;
+}
+.main text:nth-child(2){
+ display: block;
+  border: 1px solid #999;
+  background: #f1f1f1;
+  color: #333;
+  width:94%;
+  margin: 0 auto;
+  padding:15rpx 0;
+   border-radius: 8rpx;
+   font-size: 32rpx;
+}

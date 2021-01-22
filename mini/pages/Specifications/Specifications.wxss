@@ -1,0 +1,118 @@
+page{
+    background: #fff;
+    padding-bottom:100rpx;
+}
+.shop-box{
+    padding: 20rpx 30rpx;
+}
+/*图片信息*/
+.header-info{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20rpx;
+}
+.header-info .goods-info-img{
+    flex: 0 0 180rpx;
+    width: 180rpx;
+    height: 180rpx;
+    margin-right:10rpx;
+}
+.header-info .shop-info{
+    flex: 1;
+    overflow: hidden;
+    font-size: 26rpx;
+    padding-left:30rpx;
+}
+.header-info .shop-info .price{
+    font-size: 32rpx;
+    padding-top:20rpx;
+}
+.header-info .shop-info .yxz{
+    padding-top:40rpx;
+}
+
+/*分类信息*/
+.type-lists{
+    margin-bottom: 20rpx;
+    font-size: 26rpx;
+}
+.type-lists .item-header{
+    font-size:26rpx;
+    padding-bottom:20rpx;
+}
+.item-info-list{
+    flex-flow: wrap;
+}
+.item-info-list span{
+    color:#666;
+    padding:8rpx 16rpx;
+    border:1px solid #999;
+    display: inline-block;
+    margin-right: 20rpx;
+    margin-bottom: 20rpx;
+}
+.num-count{
+    font-size:26rpx;
+    padding-bottom:20rpx;
+}
+.num-count .num-title{
+    font-size:26rpx;
+    padding-bottom:20rpx;
+}
+.num-info{
+    width:320rpx;
+    display: flex;
+}
+.num-info span{
+    flex:1;
+    color:#ddd;
+    border-right:0;
+    line-height:60rpx;
+    text-align:center;
+    border:1px solid #ddd;
+    border-radius:10rpx 0 0 10rpx;
+}
+.num-info span.jia{
+    flex:1;
+    border-left:0;
+    border-radius:0 10rpx 10rpx 0;
+}
+.num-info input{
+    flex:2;
+    height:60rpx;
+    text-align:center;
+    border:1px solid #999;
+}
+.footer{
+    left:0;
+    bottom:0;
+    width:100%;
+    height:90rpx;
+    display: flex;
+    position: fixed;
+    font-size:28rpx;
+    line-height:90rpx;
+}
+.footer .shop-item{
+    flex:1;
+    text-align:center;
+    background: #fff;
+    border-top:1px solid #ddd;
+    border-right:1px solid #ddd;
+}
+.footer input{
+    flex:2;
+    height:90rpx;
+    font-size:28rpx;
+    line-height:90rpx;
+    text-align:center;
+}
+.footer .imm{
+    background: #fff;
+    border-top:1px solid #ddd;
+    border-right:1px solid #ddd;
+}
+.footer .add{
+    color:#fff;
+    background:#b4282d
+}

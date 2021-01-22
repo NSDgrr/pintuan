@@ -1,0 +1,9 @@
+<view class="header">
+  <icon class="icon-box-img" type="success" size="93"></icon>
+  <text>支付成功</text>
+  <view>感谢您对我们的支持</view>
+</view>
+<view class="main">
+  <text bindtap="jixu">继续购买</text>
+  <text bindtap="chakanorder">查看订单</text>
+</view>

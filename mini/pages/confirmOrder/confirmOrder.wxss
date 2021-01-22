@@ -1,0 +1,177 @@
+/* pages/comfirmOrder/confirmOrder.wxss */
+.confirmOrder-container{
+  padding-bottom: 70rpx;
+}
+.confirmOrder-head{
+  font-size: 28rpx;
+  padding: 20rpx 30rpx;
+  display: flex;
+  background: #fff;
+  justify-content: space-between;
+}
+.confirmOrder-head .get-person{
+  margin-bottom: 10rpx;
+}
+.confirmOrder-head .get-person text{
+  margin-right: 30rpx;
+}
+.confirmOrder-head .addrtel text{
+  margin-right: 30rpx;
+}
+.confirmOrder-head .icon{
+  display: flex;
+  align-items: center;
+}
+.guige{
+  display: block;
+  color:#000;
+  margin-top: -24rpx;
+  font-size: 22rpx;
+
+}
+.confirmOrder-list{
+  padding: 10rpx 0;
+  background: #fff;
+  margin-bottom: 10rpx;
+}
+.order-title{
+  font-size: 28rpx;
+  padding: 0 30rpx;
+  color: #b2282e;
+}
+.order-list{
+  font-size: 28rpx;
+}
+.order-list .order-con{
+  padding: 30rpx 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.order-list .order-con image{
+  width: 25%;
+  height: 165rpx;
+  margin: 0 2%;
+}
+.order-list .order-con>view{
+  width: 70%;
+}
+.order-list .order-con>view .name{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.order-list .order-con>view .size{
+  font-size: 20rpx;
+  color: #ccc;
+}
+.order-list .order-con>view .price{
+  font-size: 24rpx;
+  color: #ff0000;
+  display: block;
+}
+.order-list .order-con>text{
+  width: 98%;
+  text-align: right;
+  color: #999;
+  margin-top: -40rpx;
+}
+
+.bug-fang{
+  font-size: 28rpx;
+  padding: 20rpx 30rpx;
+  background: #fff;
+  margin-bottom: 10rpx;
+}
+.bug-fang input{
+  border: 1px solid #eee;
+  margin-top: 15rpx;
+  padding-left: 20rpx;
+  padding:10rpx 20rpx;
+  border-radius: 10rpx;
+}
+
+.price-way{
+  background: #fff;
+  font-size: 28rpx;
+  padding: 30rpx;
+}
+.price-way view{
+  display: flex;
+  margin-bottom: 15rpx;
+  justify-content: space-between;
+}
+.price-way view .price{
+  color: #b2282e;
+}
+
+.all-calc{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  display: flex;
+  font-size: 28rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.all-calc view{
+  background: #b2282e;
+  color: #fff;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  height: 100%;
+}
+.all-calc view text{
+  font-size: 48rpx;
+}
+.all-calc view.all{
+  flex-grow: 1;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+}
+
+
+.lingquan{
+  display: flex;
+  justify-content: space-between;
+  padding:10px;
+  font-size:24rpx;
+  background: #fff;
+  margin:10rpx 0;
+}
+.lingquan view:nth-child(2){flex: 1;padding:0 10px;}
+.lingquan view:nth-child(2) text{background:#b2282e;color: #fff;padding:3px;border-radius: 6px;}
+.lingquan .iconfont{font-size:24rpx;margin-top: 2px;}
+
+.lingqu_model{position: fixed;top:0;left:0;width:100%;height:100%;z-index: 999;}
+.lingqu_model .lingqu_model_top{position: absolute;top:0;left:0;width:100%;height:30%;background: rgba(0,0,0,0.5);}
+.lingqu_model .lingqu_model_con{position: absolute;bottom: 0;left:0;width:100%;height:70%;background: #fff;}
+.lingqu_model .lingqu_title{font-size:28rpx;text-align: center;position: relative;padding:10px;}
+.lingqu_model .lingqu_title text{position: absolute;right:10px;font-size: 40rpx;top:4px;}
+.lingqu_model .lingqu_ul{padding:0 10px;height:calc(100% - 40px);overflow: auto;}
+.lingqu_model .lingqu_li{display: flex;background:#999;color: #fff;border-radius:10px;position: relative;margin-bottom:10px;}
+.lingqu_model .lingqu_li.keyong{background: #f15a24;}
+.lingqu_model .lingqu_li .l_li_left{width:75%;padding:10px;display: flex;flex-direction: column;justify-content: space-between;}
+.lingqu_model .lingqu_li .l_li_left view:nth-child(1){font-size:24rpx;}
+.lingqu_model .lingqu_li .l_li_left view:nth-child(1) text{font-size:44rpx;margin-left:10px;font-weight: bold;}
+.lingqu_model .lingqu_li .l_li_left view:nth-child(2){font-size:26rpx;margin-top:10px;}
+.lingqu_model .lingqu_li .l_li_left view:nth-child(3){font-size:26rpx;margin-top:10px;}
+.lingqu_model .l_li_right{width:25%;font-size:30rpx;display: flex;align-items: center;border-left:1px dashed #fff;justify-content: center;}
+.lingqu_model .lingqu_li .l_li_span_top{position: absolute;width:10px;height:10px;background: #fff;border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;top: 0;right:calc(25% - 10px);}
+.lingqu_model .lingqu_li .l_li_span_bot{position: absolute;width:10px;height:10px;background: #fff;border-top-left-radius: 5px;border-top-right-radius: 5px;bottom: 0;right:calc(25% - 10px);}
+
+.xieyi{
+  background: #fff;
+  font-size:24rpx;
+  padding:20rpx;
+  margin:10rpx 0;
+}
+.xieyi checkbox{transform: scale(0.7);position: relative;top:-2px;}
+.xieyi navigator{display: inline-block;color: blue;}
+
+.fapiao_ul{background: #fff;font-size:26rpx;}
+.fapiao_li{display:flex;align-items: center;padding:0 20rpx;line-height: 50rpx;}
+.fapiao_li text:nth-child(1){width:180rpx;}
+.fapiao_li .iconfont{font-size:25rpx;}
+.fapiao_li input,.fapiao_li picker{flex: 1;padding:5px 0;text-align:right;}

@@ -1,0 +1,26 @@
+<!--pages/editAddress/editAddress.wxml-->
+<view class="addAddress-container">
+  <view>
+    <input placeholder="姓名" />
+  </view>
+  <view>
+    <input placeholder="手机号码" />
+  </view>
+  <view>
+    
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker">
+        当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}
+      </view>
+    </picker>
+  </view>
+  <view>
+    <input placeholder="详细地址" />
+  </view>
+  <view class="defalut">
+    <checkbox color='#fff' />
+    <label>设为默认地址</label>
+  </view>  
+</view>
+
+<navigator class="save" open-type="navigateBack" delta="1" url='../getAddress/getAddress'>保存</navigator>

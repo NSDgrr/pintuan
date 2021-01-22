@@ -1,0 +1,46 @@
+/* pages/bindPhone/bindPhone.wxss */
+.bindphone-con{
+  background: #fff;
+}
+.bindphone-con>view{
+  padding: 20rpx 30rpx;
+  border-bottom: 1px solid #eee;
+  box-sizing: border-box;
+  display: flex;
+  font-size: 28rpx;
+  align-content: center;
+}
+.bindphone-con view view{
+  width: 54%;
+}
+.bindphone-con view text{
+  display: flex;
+  width: 20%;
+  align-items: center;
+}
+.bindphone-con>text{
+  font-size: 28rpx;
+  padding: 20rpx 30rpx;
+  color: #b2282e;
+  display: block;
+}
+.bindphone-con view input{
+  border: 1rpx solid #ccc;
+  padding-left: 20rpx;
+}
+.bindphone-con view button{
+  font-size: 22rpx;
+  color: #fff;
+  background: #b2282e;
+  border-radius: 35rpx;
+}
+.bind{
+  margin: 150rpx 30rpx 0;
+  border-radius: 35rpx;
+  background: #b2282e;
+  color: #fff;
+}
+button[disabled]:not([type]){
+  background: #b2282e;
+  color:white;
+}

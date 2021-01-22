@@ -1,0 +1,61 @@
+/* pages/getAddress/getAddress.wxss */
+.getAddress-list{
+  background: #fff;
+  margin-bottom: 10rpx;
+}
+.getAddress-con{
+  display: flex;
+  padding: 30rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  justify-content: space-between;
+  align-content: center;
+}
+.getAddress-con radio{
+  display: flex;
+  align-content: center;
+}
+
+.getAddress-con .person-info{
+  padding-bottom: 15rpx;
+}
+.getAddress-con .person-info text{
+  margin-right: 40rpx;
+}
+
+.getAddress-btn{
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #ccc;
+}
+.getAddress-btn view{ 
+  width: 50%;
+  margin: 0;
+  border-radius: 0;
+  font-size: 28rpx;
+  background: #fff;
+  border-radius: 0;
+  text-align: center;
+  padding: 20rpx 0;
+}
+.getAddress-btn view.edit{
+  border-right: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+
+
+.add-address,.con-address{
+  position: fixed;
+  bottom: 0;
+  background: #b2282e;
+  font-size: 28rpx;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  padding: 20rpx 0;
+}
+
+.con-address{
+  bottom: 20rpx;
+}

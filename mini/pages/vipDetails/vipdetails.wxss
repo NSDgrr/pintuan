@@ -1,0 +1,12 @@
+page{background: #fff;}
+.head{padding:100rpx 0;text-align: center;}
+.head image{width:50px;height:50px;border-radius: 50%;margin: 0 auto;border: 1px solid #ccc;}
+.head view{font-size:24rpx;}
+
+.ul{padding:0 10px;}
+.ul .li{border-bottom: 1px solid #eee;padding:30rpx 0;}
+.ul .li .list_title{font-size:28rpx;line-height: 36rpx;}
+.ul .li .list_title .iconfont{font-size:30rpx;line-height: 36rpx;}
+.ul .li .li_text{font-size:22rpx;color: #999;line-height: 36rpx;margin-left:50rpx;text-indent: 20px;}
+
+

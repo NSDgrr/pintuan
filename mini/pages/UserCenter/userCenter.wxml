@@ -1,0 +1,90 @@
+<!--userCenter.wxml-->
+<!-- <text>个人中心.wxml</text> -->
+<view class="head">
+  <view class="head-left">
+      <navigator url="../userdata/userdata">
+        <image src="{{avatarUrl}}" alt="" class="tx" />
+      </navigator>
+      <view class="head-info">
+          <navigator url="../userdata/userdata">
+            <view class="name">{{nickName}}</view>
+          </navigator>
+          <button class="lv" wx:if="{{nickName == ''}}" open-type="getUserInfo" bindgetuserinfo="getPerson">登陆</button>
+      </view>
+  </view>
+    
+  <text class="iconfont icon-tubiaozhizuomoban"></text>        
+</view>
+<view class="order-item">
+    <view bindtap='toOrder' class="order" >
+        <view class="myOrder">我的订单</view>
+        <view class="icon">
+            <text class="iconfont icon-arrow"></text>
+        </view> 
+    </view>
+    <view class="navCont">
+        <view class="item" bindtap='toOrder_item' data-index="1">
+            <text class="iconfont icon-daifukuan"></text>
+            <view>待付款</view>
+        </view>
+        <view class="item" bindtap='toOrder_item' data-index="2">
+            <text class="iconfont icon-daifahuo"></text>
+            <view>待发货</view>
+        </view>
+        <view class="item" bindtap='toOrder_item' data-index="3">
+            <text class="iconfont icon-yifahuo"></text>
+            <view>已发货</view>
+        </view>
+        <view class="item" bindtap='toOrder_item' data-index="4">
+            <text class="iconfont icon-daipingjia"></text>
+            <view>待评价</view>
+        </view>
+        <view class="item" bindtap='toOrder_item' data-index="0">
+            <text class="iconfont icon-shouhoufuwu"></text>
+            <view>售后服务</view>
+        </view>
+    </view>
+</view>
+<block wx:if="{{ling}}">
+  <view class="lingqu" wx:if="{{lingflg}}">
+    <view>恭喜您获得一张会员卡 <text bindtap="lingclick">领取</text></view>
+  </view>
+</block>
+
+<view class="myService">
+    <!-- <view class="tit">我的服务</view> -->
+    <view class="service-item">
+        <navigator url="../member/member" class="item">
+            <text class="iconfont icon-membership-card_icon"></text>
+            <view>我的会员卡</view>
+        </navigator>
+        <navigator url="../massages/massages" class="item">
+            <text class="iconfont icon-wodekaquan"></text>
+            <view>我的优惠券</view>
+        </navigator>
+        <navigator url="../goodsCar/goodsCar" class="item">
+            <text class="iconfont icon-gouwuche"></text>
+            <view>我的购物车</view>
+        </navigator>
+        <navigator url="../collect/collect" class="item">
+            <text class="iconfont icon-icon-"></text>
+            <view>我的收藏</view>
+        </navigator>
+         <!-- <navigator url="../bindPhone/bindPhone" class="item">
+            <text class="iconfont icon-shouji"></text>
+            <view>绑定手机</view>
+        </navigator> -->
+         <navigator url="../getAddress/getAddress" class="item" bindtap="getAddress">
+            <text class="iconfont icon-dizhi"></text>
+            <view>收货地址</view>
+        </navigator>
+         <navigator url="../suggest/suggest" class="item" wx:if="{{flg[1].status == '1'}}">
+            <text class="iconfont icon-daipingjia01"></text>
+            <view>意见反馈</view>
+        </navigator>
+        <navigator url="#" class="item" wx:if="{{flg[3].status == '1'}}">
+            <text class="iconfont icon-shichangtuiguang-"></text>
+            <view>推客中心</view>
+        </navigator>
+    </view>
+</view>

@@ -1,0 +1,64 @@
+<view>
+  <view class="head">
+    <image src="{{logo}}"></image>
+    <view>{{name}}</view>
+  </view>
+
+  <view class="ul">
+    <view class="li">
+      <view class="list_title">
+        <text class="iconfont icon-quanyi"></text>
+        <text> 会员权益</text>
+      </view>
+      <view class="li_text" wx:for="{{dataval.equity}}" wx:key="{{index}}">
+        {{item}}
+      </view>
+    </view>
+    <view class="li">
+      <view class="list_title">
+        <text class="iconfont icon-ziyuan"></text>
+        <text> 使用须知</text>
+      </view>
+      <view class="li_text" wx:for="{{dataval.notice}}" wx:key="{{index}}">
+        {{item}}
+      </view>
+    </view>
+    <view class="li">
+      <view class="list_title">
+        <text class="iconfont icon-question"></text>
+        <text> 成长值是什么</text>
+      </view>
+      <view class="li_text" wx:for="{{dataval.what_growth}}" wx:key="{{index}}">
+        {{item}}
+      </view>
+    </view>
+    <view class="li">
+      <view class="list_title">
+        <text class="iconfont icon-zhifeiji"></text>
+        <text> 如何获取成长值？</text>
+      </view>
+      <view class="li_text" wx:for="{{dataval.get_growth}}" wx:key="{{index}}">
+        {{item}}
+      </view>
+    </view>
+    <view class="li">
+      <view class="list_title">
+        <text class="iconfont icon-dianhua"></text>
+        <text> 客服电话</text>
+      </view>
+      <view class="li_text">
+        {{dataval.service_tel}}
+      </view>
+    </view>
+    <view class="li">
+      <view class="list_title">
+        <text class="iconfont icon-shijian"></text>
+        <text> 有效期</text>
+      </view>
+      <view class="li_text">
+        {{dataval.validity}}
+      </view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,27 @@
+<view class="head">
+  售后选择:
+  <radio-group bindchange="radiochange"  >
+    <radio name="aa" value="1" color="#b2282e">退货</radio>
+    <radio name="aa" value="2"  checked='true' color="#b2282e">退款</radio>
+    <radio name="aa" value="3" color="#b2282e">维修</radio>
+  </radio-group>
+</view>
+<view class="title">申请原因：</view>
+<textarea bindinput="textchange"></textarea>
+<view class="flie_up">
+  <view bindtap="flie_upload" data-index="0">
+    <image wx:if="{{flieList[0]}}" src="{{flieList[0]}}"></image>
+    <text wx:else>+</text>
+  </view>
+  <view bindtap="flie_upload" data-index="1">
+    <image wx:if="{{flieList[1]}}" src="{{flieList[1]}}"></image>
+    <text wx:else>+</text>
+  </view>
+  <view bindtap="flie_upload" data-index="2">
+    <image wx:if="{{flieList[2]}}" src="{{flieList[2]}}"></image>
+    <text wx:else>+</text>
+  </view>
+</view>
+<view class="submit_btn" bindtap="submit_btn">申请售后</view>
+
+

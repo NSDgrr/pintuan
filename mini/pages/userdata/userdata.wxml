@@ -1,0 +1,32 @@
+<view>
+
+  <view class="ul">
+    <view class="li">
+      <view>手机</view>
+      <input type="tel" placeholder="手机号码" bindinput="telchang" value="{{dataval.mobile?dataval.mobile:''}}"/>
+    </view>
+    <view class="li">
+      <view>姓名</view>
+      <input type="text" placeholder="姓名" bindinput="namechang" value="{{dataval.relname?dataval.relname:''}}"/>
+    </view>
+    <view class="li">
+      <view>性别</view>
+      <picker bindchange="sexPickerChange" value="{{sexindex}}" range="{{sex}}">
+          {{sex[sexindex]}}
+      </picker>
+    </view>
+    <view class="li">
+      <view>生日</view>
+      <picker mode="date" value="{{timeindex}}" bindchange="timePickerChange" start="1900-01-01" end="3000-01-01" disabled="{{zhidu}}">
+        {{timeindex}}
+      </picker>
+    </view>
+    <view class="li">
+      <view></view>
+      <view>生日填写后不可更改</view>
+    </view>
+  </view>
+
+  <view class="btn" bindtap="formsubmit">确认</view>
+
+</view>

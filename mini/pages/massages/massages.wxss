@@ -1,0 +1,16 @@
+page{background: #fff;}
+.tab_top{display: flex;border: 1px solid #eee;margin-bottom:10px;}
+.tab_top view{width:50%;font-size:30rpx;color: #333;text-align: center;padding:10px 0;}
+.tab_top view.active{color: #b2282e;border-bottom:1px solid #b2282e;}
+.lingqu_ul{padding:0 10px;height:calc(100% - 40px);overflow: auto;}
+.lingqu_li{display: flex;background:#999;color: #fff;border-radius:10px;position: relative;margin-bottom:10px;}
+.lingqu_li.keyong{background: #f15a24;}
+.lingqu_li .l_li_left{width:75%;padding:10px;display: flex;flex-direction: column;justify-content: space-between;}
+.lingqu_li .l_li_left view:nth-child(1){font-size:24rpx;}
+.lingqu_li .l_li_left view:nth-child(1) text{font-size:44rpx;margin-left:10px;font-weight: bold;}
+.lingqu_li .l_li_left view:nth-child(2){font-size:26rpx;margin-top:10px;}
+.lingqu_li .l_li_left view:nth-child(3){font-size:26rpx;margin-top:10px;}
+.l_li_right{width:25%;font-size:30rpx;display: flex;align-items: center;border-left:1px dashed #fff;justify-content: center;}
+.lingqu_li .l_li_span_top{position: absolute;width:10px;height:10px;background: #fff;border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;top: 0;right:calc(25% - 10px);}
+.lingqu_li .l_li_span_bot{position: absolute;width:10px;height:10px;background: #fff;border-top-left-radius: 5px;border-top-right-radius: 5px;bottom: 0;right:calc(25% - 10px);}
+

@@ -1,0 +1,21 @@
+page{background: #fff;}
+.kapian{margin:40rpx 110rpx;border: 1px solid #ccc;border-radius: 8px;position: relative;height:165px;overflow: visible;}
+.kapian_top{padding:20rpx;display: flex;align-items: center;}
+.kapian_top image{width:40px;height:40px;border-radius: 50%;border:1px solid #ccc;}
+.kapian_top view{font-size:24rpx;margin-left:10px;}
+.kapian_top view text{display: block;color: #fff;}
+.kapian_right{position: absolute;right:10px;top:10px;}
+.kapian_right text{font-size:40rpx;color: #fff;}
+.kapian_num{font-size:24rpx;padding:20rpx;margin-top: 66px;color: #fff;}
+
+.huiyuan_ul{padding:10px 0;display: flex;justify-content:space-around;border-bottom:1px solid #eee;margin:0 10px;}
+.huiyuan_ul .huiyuan_li{width:100%;text-align: center;border-right:1px solid #eee;}
+.huiyuan_ul .huiyuan_li:last-child{border-right:none;}
+.huiyuan_ul .huiyuan_li view{font-size:26rpx;margin-bottom:3px;}
+.huiyuan_ul .huiyuan_li text{font-size:26rpx;display: block;color:#e13953;}
+
+.list{padding:0 10px;}
+.list .list_li navigator{padding:15px 0;border-bottom:1px solid #eee;display: flex;justify-content: space-between;font-size:26rpx;}
+.list .list_li .iconfont{font-size:24rpx;}
+
+

@@ -1,0 +1,7 @@
+<!--pages/suggest/suggest.wxml-->
+<view>意见反馈</view>
+<view class="con">
+  <textarea />
+</view>
+<view class="prompt">您可以将想要反馈的问题在反馈内容栏内进行发布，客服人员会尽快解决！</view>
+<button>提交</button>

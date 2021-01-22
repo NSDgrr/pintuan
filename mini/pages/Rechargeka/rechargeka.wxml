@@ -1,0 +1,25 @@
+<view>
+  <view class="head">
+    充值卡充值
+    <view><navigator url="../Recharge/recharge" class="item">在线充值</navigator></view>
+  </view>
+
+  <view class="yue">
+    我的余额 <text>{{yue?'￥'+yue:'￥0.00'}}</text>
+  </view>
+
+  <view class="input_div">
+    <view class="input_div_left">
+      <text class="iconfont icon-wodekaquan"></text>
+    </view>
+    <view class="input_div_right">
+      <input type="text" placeholder="请输入充值卡密码" bindinput="inputcodeval" />
+    </view>
+  </view>
+
+  <view class="btn_chong" bindtap="chongzhisub">立即充值</view>
+  <view class="btn_taren"><navigator url="../others/others" class="item">❤为他人充值</navigator></view>
+
+
+
+</view>

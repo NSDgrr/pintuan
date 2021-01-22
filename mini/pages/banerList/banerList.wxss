@@ -1,0 +1,81 @@
+/* pages/banerList/banerList.wxss */
+@import "../../main.wxss";
+.flex{
+  display:flex;
+}
+.sg_name{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  /* width:calc(100% - 130rpx); */
+  display:block;
+}
+.space-between{
+  justify-content: space-between;
+}
+.space-around{
+  justify-content: space-around;
+}
+.align-end{
+  align-items: flex-end;
+}
+.gray{
+  color:#9fa0a0;
+}
+.header_img{
+  width: 100%;
+}
+.bold_tit{
+  font-weight: 700;
+}
+.cu-card.article>.cu-item .content {
+	display: flex;
+  padding: 15rpx 15rpx 0 15rpx;
+  justify-content: space-between;
+  position: relative;
+}
+.cu-card.article>.cu-item .content>.img_box {
+  position: relative;
+  width: 240rpx;
+	height: 8.4em;
+	margin-right: 20rpx;
+  border-radius: 6rpx;
+  overflow: hidden;
+} 
+.bktj_img{
+  position: absolute;
+  z-index: 1;
+  width: 120rpx;
+  left: 0rpx;
+  top: 0rpx;
+}
+.cu-card.article>.cu-item {
+	padding-bottom: 15rpx;
+}
+
+.text-red{
+  color: #e60012;
+}
+.add{
+    display: block;
+    width: 50rpx;
+    height: 50rpx;
+    background: #e60012;
+    color: #fff;
+    font-size: 40rpx;
+    line-height: 50rpx;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 50%;
+    margin: 0 10rpx;
+}
+.price_box{
+  height: 60rpx;
+}
+.cu-card.article>.cu-item .content .text-content {
+	font-size: 20rpx;
+	color: #888;
+	height: 2.8em;
+  overflow: hidden;
+  line-height: 1.3;
+}

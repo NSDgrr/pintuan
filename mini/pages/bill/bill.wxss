@@ -1,0 +1,18 @@
+page{background: #fff;}
+.head{background: #e13953;color: #fff;font-size:24rpx;display: flex;padding:10px 15px;line-height: 36rpx;}
+.head text{font-size:36rpx;font-weight: bold;}
+
+.li .li_top{background: #fff;padding:10rpx 30rpx;display: flex;justify-content: space-between;align-items: center;border: 1px solid #eee;}
+.li .li_top text{font-size:28rpx;}
+.li .li_top view{font-size:24rpx;}
+.li .li_top .li_top_right{font-size:36rpx;color: #00a73b;}
+.li_bot{background: #f2f2f2;font-size:24rpx;padding:5px 30rpx;}
+.li_bot view:nth-child(2) text{float: right;}
+.li_bot view:nth-child(3) text{float: right;}
+
+
+
+
+
+
+

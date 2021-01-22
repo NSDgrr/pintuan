@@ -1,0 +1,46 @@
+<view>
+  <view class="tab_top">
+    <view class="{{index == '1'?'active':''}}" data-index="1" bindtap="shiyong_click">未使用</view>
+    <view class="{{index == '2'?'active':''}}" data-index="2" bindtap="shiyong_click">已使用</view>
+  </view>
+  <view>
+    <view class="lingqu_ul" wx:if="{{index == '1'}}">
+        <view class="lingqu_li keyong" wx:for="{{list.wei}}" wx:key="{{index}}">
+            <view class="l_li_left">
+              <view wx:if="{{item.cou_type == '0'}}">￥<text>{{item.type_val}}</text></view>
+              <view wx:if="{{item.cou_type == '1'}}"><text>{{item.type_val}}</text> 折</view>
+              <view wx:if="{{item.cou_type == '2'}}"><text>{{item.type_val}}</text> 礼品</view>
+              <view wx:if="{{item.cou_type == '3'}}">满 <text>{{item.rule_val}}</text> 可用</view>
+              <view></view>
+              <view>有效期限：{{item.valid_time}}</view>
+            </view>
+            <view class="l_li_right">
+              <text>可使用</text>
+            </view>
+            <text class="l_li_span_top"></text>
+            <text class="l_li_span_bot"></text>
+        </view>
+      </view>
+
+
+      <view class="lingqu_ul" wx:if="{{index == '2'}}">
+        <view class="lingqu_li" wx:for="{{list.yi}}" wx:key="{{index}}">
+          <view class="l_li_left">
+            <view wx:if="{{item.cou_type == '0'}}">￥<text>{{item.type_val}}</text></view>
+            <view wx:if="{{item.cou_type == '1'}}"><text>{{item.type_val}}</text> 折</view>
+            <view wx:if="{{item.cou_type == '2'}}"><text>{{item.type_val}}</text> 礼品</view>
+            <view wx:if="{{item.cou_type == '3'}}">满 <text>{{item.rule_val}}</text> 可用</view>
+            <view></view>
+            <view>有效期限：{{item.valid_time}}</view>
+          </view>
+          <view class="l_li_right">
+            <text>不可用</text>
+          </view>
+          <text class="l_li_span_top"></text>
+          <text class="l_li_span_bot"></text>
+        </view>
+      </view>
+
+
+  </view>
+</view>

@@ -1,0 +1,112 @@
+/* userCenter.wxss */
+.head{
+    width:750rpx;
+    display:flex;
+    height:270rpx;
+    background:#333;
+    padding:0 40rpx;
+    box-sizing: border-box;
+}
+.head-left{
+    flex:0 0 70%;
+    display:flex;
+    margin-top:64rpx;
+}
+.head .tx{
+    width:142rpx;
+    height:142rpx;
+    border-radius:50%;
+}
+.head-info{
+    flex:1;
+    padding-top:24rpx;
+    margin-left:40rpx;
+}
+.head-info .name{
+    color:#fff;
+    font-size:36rpx;
+}
+.head-info .lv{
+    color:#888;
+    font-size:28rpx;
+}
+.ewm{
+    width:100rpx;
+    height:100rpx;
+    margin-top:85rpx;
+}
+.order-item{
+    background:#fff;
+    border-bottom:10rpx solid #eee;
+}
+.order{
+    display:flex;
+    height:80rpx;
+    padding:0 40rpx;
+    box-sizing: border-box;
+    line-height:80rpx;
+    border-bottom:1px solid #ddd;
+}
+.myOrder{
+    flex:1;
+    font-size:28rpx;
+}
+.order .icon{
+    flex:1;
+    text-align:right;
+    line-height:80rpx;
+}
+.order .icon .iconfont{
+  color: #999;
+}
+.icon-right{
+    color:#999;
+    font-size:28rpx;
+}
+.navCont{
+    display:flex;
+}
+.navCont .item{
+    flex:1;
+    padding:16rpx 0;
+    font-size:24rpx;
+    text-align:center;
+}
+.navCont .iconfont{
+    color:#666;
+    font-size:40rpx;
+}
+.myService{
+    background:#fff;
+}
+.myService .tit{
+    height:80rpx;
+    font-size:28rpx;
+    padding:0 40rpx;
+    line-height:80rpx;
+}
+.service-item{
+    display:flex;  
+    flex-flow: wrap;
+}
+.service-item .item{
+    flex: 0 0 90%;
+    font-size:28rpx;
+    padding:24rpx 5%;
+    border-top:1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+.service-item .item .iconfont{
+    color:#e13953;
+    margin-right:20rpx;
+}
+.service-item .item .bl{
+    color:#3e8dc7;
+}
+
+.service-item .item .red{
+    color:#f97c6f;
+}
+.lingqu{background: #fff;border-bottom:10rpx solid #eee;font-size:28rpx;padding:24rpx 5%;position: relative;}
+.lingqu text{background: #e13953;color: #fff;padding:5rpx 25rpx;border-radius: 30rpx;position:absolute;right:5%;top:20rpx;}

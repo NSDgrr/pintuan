@@ -1,0 +1,24 @@
+page{background: #f1f1f1;}
+.head{background: #b4282d;padding:5px 0;text-align: center;font-size:24rpx;color: #fff;position: relative;}
+.head view{position: absolute;right:15px;top:5px;}
+.yue{padding:40rpx 0;font-size:24rpx;background: #fff;text-align: center;}
+.yue text{font-size:36rpx;color: #b4282d;}
+.input_div{padding:10px 15px;display: flex;}
+.input_div .input_div_left{width:80rpx;line-height: 40px;text-align: center;}
+.input_div .input_div_left text{font-size:40rpx;color: #b4282d;}
+.input_div .input_div_right{background: #fff;border: 1px solid #eee;border-radius: 8rpx;padding:6px 10px;flex: 1;}
+.input_div .input_div_right input{width:100%;font-size:24rpx;}
+.shuru_num{margin:0 15px 8px;padding:6px 10px;background: #fff;box-sizing: border-box;border: 1px solid #eee;border-radius: 8rpx;}
+.shuru_num input{width:100%;text-align: center;font-size:24rpx;}
+.btn_chong{background: #b4282d;margin:0 15px 8px;padding:13px 0;text-align: center;color: #fff;font-size:24rpx;border-radius: 8rpx;}
+
+.btn_taren{text-align: center;font-size:24rpx;color: #b4282d;}
+
+
+
+
+
+
+
+
+

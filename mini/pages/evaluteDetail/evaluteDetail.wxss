@@ -1,0 +1,137 @@
+/* pages/evaluteDetail/evaluteDetail.wxss */
+.evalute{
+  background: #fff;
+  font-size: 28rpx;
+  padding: 20rpx 30rpx;
+  border-bottom: 1px solid #ccc;
+}
+.all-evalute{
+  background: #fff;
+  font-size: 28rpx; 
+}
+.evalute-container .protrait{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 30rpx;
+}
+.evalute-container .protrait image{
+  width: 100%;
+  height: 100%;
+}
+.item .person{
+  display: flex;
+}
+.item .person .name{
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+.item .datas{
+  display: flex;
+  margin-bottom: 20rpx;
+}
+.item .datas view{
+  margin-right: 20rpx;
+  color: #999;
+  font-size: 24rpx;
+}
+.item .goods{
+  display: flex;
+  justify-content: space-between;
+}
+.item .goods .img{
+  width: 30%;
+  margin-right: 10rpx;
+}
+.item .goods .img image{ 
+  width: 100%;
+  height: 100rpx;
+}
+.item .con{
+  padding-bottom: 15rpx;
+}
+.detail{
+  width: 65%;
+}
+.detail view{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.detail .size{
+  font-size: 20rpx;
+  margin:5rpx 0 10rpx;
+  color: #ccc;
+}
+.detail .price{
+  font-size: 24rpx;
+  color: #ff0000;
+}
+.title text{
+  padding: 5rpx 30rpx;
+  background: #b2282e;
+  color: #fff;
+  border-radius: 0 20rpx 20rpx 0;
+  font-size: 24rpx;
+}
+.all-evalute .list{
+  padding: 20rpx 30rpx;
+  border-bottom: 1px solid #ccc;
+}
+.all-evalute .list .all-person{
+  display: flex;
+  margin-bottom: 10rpx;
+}
+.all-evalute .list .all-person .name{
+  padding-top: 8rpx;
+}
+.all-evalute .list .all-person .date{
+  font-size: 24rpx;
+  color: #999;
+}
+
+.write{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120rpx;
+  display: flex;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.write .before{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.write .before button{
+  width: 100%;
+  height: 80rpx;
+}
+.write .after{
+  width: 100%;
+  align-items: center;
+  display: flex;
+  display: none;
+}
+.write.other .before{
+  display: none;
+}
+.write.other .after{
+  display: flex;
+}
+.write .after input{
+  height: 66rpx;
+  flex-grow: 1;
+  background: #fff;
+  font-size: 28rpx;
+  padding-left: 20rpx;
+}
+.write button{
+  font-size: 28rpx;
+  margin: 0;
+  border: none;
+}

@@ -1,0 +1,33 @@
+<!--pages/collect/collect.wxml-->
+
+<view class="collect-deal {{flag?'show':''}}">
+  <view class='edit'>
+    <text>全部分类(<text>{{col.length}}</text>)</text>
+    <text bindtap='onChangeFlagState'>编辑</text>
+  </view>
+  <view class="cancel">
+    <text bindtap='deleteList'>删除收藏</text>
+    <text bindtap="onChangeFlagState">取消</text>
+  </view>
+</view>
+
+
+  <view class="collect-con {{flag?'show':''}}">
+    <view wx:if="{{hasList}}">
+     
+      <navigator  class='collect-con-con' wx:for="{{col}}" wx:key="{{index}}">
+        <navigator url="../goodsInfo/GoodsInfo?id={{item.sg_id}}">
+        <image src="{{item.sg_img_url}}"></image>
+        </navigator>
+        <text>{{item.sg_name}}</text>
+        <text class="price">￥{{item.sg_price}}</text>
+        <icon wx:if="{{item.selected}}" type="success" color="#b2282e" data-index="{{index}}"  class="cart-pro-select" bindtap="selectList"/>
+                <icon wx:else type="circle" class="cart-pro-select" data-index="{{index}}" bindtap="selectList"/>
+     
+     </navigator>
+    </view>
+    <view wx:else>
+    
+      <view class="cart-no-data">没有收藏哦~</view>
+    </view>
+  </view>

@@ -1,0 +1,160 @@
+<view class="confirmOrder-container">
+  <view class='confirmOrder-head' bindtap="getAddress">
+    <view wx:if="{{nowAddress != ''}}">
+      <view class="get-person"><text>{{nowAddress.sa_name}}</text><text>{{nowAddress.sa_tel}}</text></view>
+      <view class='addrtel'>
+        <text>{{nowAddress.sa_province}}{{nowAddress.sa_city}}{{nowAddress.sa_detail_addr}}</text>
+      </view>
+
+    </view>
+    <view wx:else>
+      <view class="get-person">收件人：请选择收件人地址</view>
+    </view>
+    <view class="icon">
+      <text class="iconfont icon-arrow"></text>
+    </view>
+  </view>
+  <view style="background:url(https://qiniuyun.mobtop.com.cn/jpg1590124592_70855491.jpg);height:8rpx;"></view>
+  <view class="confirmOrder-list">
+
+    <view class="order-title">
+      <text class='iconfont icon-qingdan'></text>
+      <text>购物清单</text>
+    </view>
+
+    <view class="order-list" wx:for="{{info.goods_info}}" wx:key="{{index}}">
+      <view class="order-con">
+        <!-- <block wx:for="{info.sg_lun}}" >   -->
+        <image src="{{item.sg_img_url}}"></image>
+          <!-- <block>   -->
+        <view>
+          <view class="name">{{item.sg_name}}</view>
+          <text class="price">￥{{item.price}}</text>
+          <text class='guige' wx:if="{{item.spec_name != '' || item.spec_name != undefined}}">
+           {{item.spec_name}}
+          </text>
+        </view>
+        <text>数量×{{item.num}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="bug-fang">
+    <view>买家留言</view>
+    <input placeholder="选填：对本次交易的说明" bindinput="inputchange" />
+  </view>
+
+  <view class="fapiao_ul">
+    <view class="fapiao_li">
+      <text>发票</text>
+      <picker bindchange="bindfapiao" value="{{fapiaoindex}}" range="{{fapiaoarr}}">
+        {{fapiaoarr[fapiaoindex]}}
+      </picker>
+      <text class="iconfont icon-arrow"></text>
+    </view>
+    <block wx:if="{{fapiaoindex == '1'}}">
+      <view class="fapiao_li">
+        <text>发票类型</text>
+        <picker bindchange="bindfapiaotype" value="{{fapiaoleiindex}}" range="{{fapiaoleiarr}}">
+          {{fapiaoleiarr[fapiaoleiindex]}}
+        </picker>
+        <text class="iconfont icon-arrow"></text>
+      </view>
+      <view class="fapiao_li">
+        <text>抬头</text>
+        <input type="text" bindinput="taitouchange" data-flg="taitou" placeholder="请填写发票抬头" />
+      </view>
+      <view class="fapiao_li" wx:if="{{fapiaoleiindex == '1'}}">
+        <text>纳税人识别号</text>
+        <input type="text" bindinput="taitouchange" data-flg="shibie" placeholder="请填写识别号" />
+      </view>
+      <view class="fapiao_li">
+        <text>电话</text>
+        <input type="number" bindinput="taitouchange" data-flg="tel" placeholder="请填写手机号" value="{{fa_tel}}" />
+      </view>
+      <view class="fapiao_li">
+        <text>邮箱</text>
+        <input type="text" bindinput="taitouchange" data-flg="email" placeholder="请填写邮箱" />
+      </view>
+    </block>
+  </view>
+
+  <view class="lingquan" bindtap="lingquan_click">
+    <view>优惠券</view>
+    <view>
+      <text>{{youhui_length}}张可用</text>
+    </view>
+    <view>{{youhui_name?youhui_name:'未使用'}}<text class="iconfont icon-arrow"></text></view>
+  </view>
+
+  <view class="price-way">
+    <view>
+      <text>商品金额</text>
+      <text class="price">￥{{info.total_price}}</text>
+    </view>
+    <view>
+      <text>运费</text>
+      <text class="price">+￥{{info.carriage}}</text>
+    </view>
+    <view>
+      <text>折扣</text>
+      <text class="price">-￥{{info.zhekou}}</text>
+    </view>
+    <view>
+      <text>优惠券</text>
+      <text class="price">-￥{{youhui_pr}}</text>
+    </view>
+    
+  </view>
+
+  <view class="xieyi">
+    <checkbox-group bindchange="checkboxChange">
+      <label class="radio">
+        <checkbox value="1" checked="{{xieyi_check}}" color="#b2282e"/>
+        <text>我已阅读并同意</text>
+        <navigator url='../agreement/agreement'>《商品购买协议》</navigator>
+      </label>
+    </checkbox-group>
+  </view>
+
+  <view class='all-calc'>
+    <view class='all'>总计： ￥ <text>{{info.last_money}}</text> 元 </view>
+    <!-- <view class="" bindtap='payval' url="../confirmPay/confirmPay?data={{price * num}}"><view>确认支付</view></view> -->
+    <view bindtap='payval' style="{{btn_flg?'':'pointer-events: none;'}}">确认支付</view>
+  </view>
+
+  <view class="lingqu_model" wx:if="{{youhui_showhide}}">
+    <view class="lingqu_model_top" bindtap="lingqu_hide"></view>
+    <view class="lingqu_model_con">
+      <view class="lingqu_title">使用优惠券 <text bindtap="lingqu_hide">×</text></view>
+      <view class="lingqu_ul">
+
+        <view class="lingqu_li keyong" wx:for="{{youhui_list}}" wx:key="{{index}}">
+          <view class="l_li_left">
+            <view wx:if='{{item.coupon_type == "1"}}'>￥<text>{{item.type_val}}</text></view>
+            <view wx:if='{{item.coupon_type == "2"}}'><text>{{item.type_val}}</text> 折</view>
+            <view wx:if='{{item.coupon_type == "3"}}'>￥<text>{{item.type_val}}</text></view>
+            <view wx:if='{{item.coupon_type == "4"}}'><text>{{item.type_val}}</text></view>
+            <view>{{item.name}}</view>
+            <view>有效期限：{{item.expiry_time}}</view>
+          </view>
+          <view class="l_li_right">
+            <icon type="success_no_circle" size="16" color="#fff" wx:if="{{item.flg}}"></icon>
+            <block wx:if="{{item.coupon_type == '1'}}">
+              <text wx:if="{{item.codename}}" bindtap="clickshiyong" data-id="{{item.id}}" data-code="{{item.codename}}" data-pr="{{item.type_val}}" data-type="{{item.coupon_type}}">使用</text>
+              <text wx:if="{{!item.codename}}" bindtap="lin_youhui" data-id="{{item.id}}">立即领取</text>
+            </block>
+            <block wx:if="{{item.coupon_type != '1'}}">
+              <text bindtap="clickshiyong" data-id="{{item.id}}" data-code="{{item.codename}}" data-pr="{{item.type_val}}" data-type="{{item.coupon_type}}">使用</text>
+              <!-- <text wx:if="{{!item.codename}}" bindtap="lin_youhui" data-id="{{item.id}}">立即领取</text> -->
+            </block>
+          </view>
+          <text class="l_li_span_top"></text>
+          <text class="l_li_span_bot"></text>
+        </view>
+        
+      </view>
+    </view>
+  </view>
+
+</view>

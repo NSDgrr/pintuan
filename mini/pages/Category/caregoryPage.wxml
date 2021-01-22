@@ -1,0 +1,52 @@
+<!-- caregoryPage.wxml-->
+
+<view class="search-box">
+    <navigator url="../TypeIndex/TypeIndex" class="search">
+        <text class="iconfont icon-search"></text>
+        搜索商品
+    </navigator>
+</view>
+<view class="content">
+    <view class="cont-left">
+    
+    
+        <scroll-view  scroll-y class="scroll-height" bindtap='tabFun'>
+        
+        <block wx:for="{{listshop}}" wx:key="{{index}}">
+        
+             <view  class="shop-nav {{tabArr.curHdIndex== index ? 'active' : ''}}"  data-id="{{index}}"
+              data-zid="{{item.sot_id}}">
+              
+             {{item.sot_name}}
+             
+             </view> 
+            
+        </block>
+            
+        </scroll-view>
+    </view>
+
+
+    <view class="cont-right">
+        <scroll-view scroll-y class="scroll-height" >
+          <view class="shop-list {{tabArr.curBdIndex=='{{index}}'? 'active' : ''}}">
+            <view class="banner">
+            </view>
+            <view class="type-list"  wx:for="{{zres}}" wx:key="key">
+                <view class="type-tit" >
+                    <view class="tit-border"></view>
+                    <view class="tit-name">{{item.so_name}}</view> 
+                  
+                </view>
+                <view class="list-cont" >
+                     <view url="../TypeIndex/TypeIndex" wx:key="key" class="shop-item" wx:for="{{item.children}}" wx:for-item="items" data-sod="{{items.id}}" data-name="" bindtap="typeNav">
+                        <image class="shop" src="{{items.img}}"></image>
+                        <view class="shp-name">{{items.name}}</view>
+                    </view>                
+                </view>
+            </view>
+          </view>
+      </scroll-view>
+      
+    </view>
+</view>

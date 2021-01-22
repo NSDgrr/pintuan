@@ -1,0 +1,57 @@
+<view>
+  <view class="head">
+    为他人充值
+    <view><navigator url="../Recharge/recharge" class="item">给自己充值</navigator></view>
+  </view>
+
+  <!-- <view class="nav">
+    <view class="{{navindex == '1'?'active':''}}" bindtap="navclick" data-index='1'>在线充值</view>
+    <view class="{{navindex == '0'?'active':''}}" bindtap="navclick" data-index='0'>充值卡充值</view>
+  </view> -->
+
+  <view wx:if="{{navindex == '1'}}">
+    <view class="input_div">
+      <view class="input_div_left">
+        <text class="iconfont icon-shouji"></text>
+      </view>
+      <view class="input_div_right">
+        <input type="text" placeholder="对方手机号码" bindblur="zaicodetel"/>
+      </view>
+    </view>
+    <view class="ul">
+      <view wx:for="{{taoclist}}" wx:key="{{index}}" class="li {{listindex == index?'active':''}}" data-index="{{index}}" data-id="{{item.id}}" bindtap="listclick">
+        <text>{{item.chong}}元</text>
+        <text wx:if="{{item.zeng != 0}}">赠：{{item.zeng}}</text>
+        <text wx:if="{{item.zeng_product}}">赠：{{item.zeng_product}}</text>
+      </view>
+    </view>
+    <view class="shuru_num">
+      <input type="text" placeholder="输入其他金额" bindinput="inputprval"/>
+    </view>
+    <view class="btn_chong" bindtap="chongzhisub">立即充值</view>
+
+
+  </view>
+
+  <!-- <view wx:if="{{navindex == '0'}}">
+    <view class="input_div">
+      <view class="input_div_left">
+        <text class="iconfont icon-shouji"></text>
+      </view>
+      <view class="input_div_right">
+        <input type="text" placeholder="对方手机号码" bindblur="codetel" />
+      </view>
+    </view>
+    <view class="input_div">
+      <view class="input_div_left">
+        <text class="iconfont icon-wodekaquan"></text>
+      </view>
+      <view class="input_div_right">
+        <input type="text" placeholder="请输入充值卡密码" bindinput="codeval"/>
+      </view>
+    </view>
+    <view class="btn_chong" bindtap="chongzhicodesub">立即充值</view>
+  </view> -->
+
+
+</view>

@@ -1,0 +1,73 @@
+<!--引入公共搜索-->
+<include src="../PublicLayout/SearchBar.wxml"/>
+
+<view class="shop-box">
+    <!--图片信息-->
+    <view class="header-info">
+         <image src="../../static/imgs/goods1.jpg" class="goods-info-img"></image>
+        <view class="shop-info">
+            <view class="price mainColor">
+                <span>价格：￥</span>
+                <span>300</span>
+            </view>
+            <view class="yxz">已选择：<span>请选择规格数量</span></view>
+        </view>
+    </view>
+
+    <!--分类信息-->
+    <view class="type-lists">
+        <view class="type-item">
+            <view class="item-header">颜色</view>
+            <view class="item-info-list">
+                <span>白色</span>
+                <span>黑色</span>
+                <span>黑色</span>
+                <span>黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色</span>
+                <span>黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色</span>
+                <span>黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色</span>
+                <span>黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色</span>
+                <span>黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色</span>
+                <span>黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色</span>
+                <span>黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色</span>
+                <span>黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色</span>
+                <span>黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色</span>
+                <span>黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色</span>
+                <span>黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色</span>
+                <span>黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色</span>
+                <span>黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色</span>
+                <span>黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色</span>
+                <span>黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色</span>
+                <span>黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色黑色</span>
+                <span>黑色</span>
+                <span>黑色</span>
+                <span>黑色</span>
+                <span>黑色</span>
+                <span>黑色</span>
+                <span>黑色</span>
+            </view>
+        </view>
+    </view>
+
+    <!--数量信息-->
+    <view class="num-count">
+        <view class="num-title">数量</view>
+        <view class="num-info">
+            <span class="view-left jian">
+                <i class="iconfont icon-minus"></i>
+            </span>
+            <input type="number" placeholder="" value="1"/>
+            <span class="view-left jia">
+                <i class="iconfont icon-plus"></i>
+            </span>
+        </view>
+    </view>
+    
+    <!--底部操作-->
+</view>
+<view class="footer">
+    <navigator url="#" class="shop-item">
+        返回          
+    </navigator>
+    <input type="button" value="立即购买" class="imm" />
+    <input type="button" value="加入购物车" class="add" />
+</view>

@@ -1,0 +1,264 @@
+/* GoodsInfo.wxss */
+/* 引入wxParse包 */
+@import "../../main.wxss";
+@import "../wxParse/wxParse.wxss";
+page{
+    padding-bottom: 106rpx;
+}
+.bg-red-wei{
+  background-color:#c30d23;
+}
+.screen-swiper {
+	min-height: 500rpx;
+}
+/*swiper*/
+.page-swiper{
+    width: 100%;
+    height: 560rpx;
+}
+.page-swiper image{
+    width: 100%;
+    height: 750rpx;
+}
+.page-swiper video{
+  width: 100%;
+  height: 750rpx;
+}
+
+
+.goods-info-box{
+  background-color: #c30d23;
+  padding: 30rpx 50rpx;
+}
+
+.goods-info-container{
+  padding-bottom:160rpx;
+}
+/*底部页面*/
+#footer{
+    width: 100%;
+    line-height: 115rpx;
+    background: #ffffff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* display: flex; */
+    font-size: 30rpx;
+    padding:20rpx 50rpx;
+    z-index: 999;
+}
+#footer .footerBtn,.goodsChoicePop .footerBtn{
+    text-align: center;
+    margin: 0 auto;
+    color:#fff;
+}
+.grayBtn{
+  background:#898989;
+}
+.activeBtn{
+  background:#b4282d;
+}
+
+.text-white{
+  color: #ffffff;
+}
+.text-gray{
+  color:#898989;
+}
+.bold{
+  font-weight: bold;
+}
+/*底部页面*/
+
+#footer .addGoodsCar_s{
+  flex: 0 0 10%;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 14rpx;
+  margin-right: 2%;
+}
+#footer .addGoodsCar{
+  flex: 0 0 10%;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 14rpx;
+  margin-right: 2%;
+}
+#footer .iconfont{
+/* font-size: 50rpx; */
+/* color: #b2282e; */
+font-size:44rpx;
+color:#707070;
+}
+
+#footer .footerBtn{
+  flex: 0 0 28%;
+  /* width: 85%; */
+  border-radius: 120rpx;
+}
+
+#footer .mainBg{
+  color: #fff;
+  margin-right:2%;
+}
+#buy{
+background: white;
+line-height: 104rpx;
+}
+.left-item,.right-item{
+  width: 50%;
+}
+.right-item{
+  padding-left: 20rpx;
+  /* align-items: center; */
+}
+.brand{
+  flex: 0 0 26%;
+}
+.goodsBrand{
+  display: flex;
+  align-items: center;
+}
+.spec_name{
+  flex: 0 0 20%;
+}
+.teJia_box{
+  background-color: #fbda95;
+  padding: 15rpx 40rpx 15rpx 50rpx;
+}
+.teJia_box .part_left{
+  width: 77%;
+}
+.teJia_box .part_right{
+  width: 25%;
+  align-items: flex-end;
+  display: flex;
+  justify-content: flex-end;
+}
+.hd_box{
+  background-color: #ffffff;
+  padding: 15rpx 47rpx 15rpx 50rpx;
+}
+.item_view1,.item_view2{
+  width: 50%;
+}
+.item_view2{
+  text-align:right;
+}
+checkbox{
+  transform: scale(0.6);
+  position: relative;
+  top:-2px;
+}
+.text-red{
+  color:#b4282d
+}
+.text-sl{
+  font-size:60rpx
+}
+.info_box view{
+  /* width:33.3% */
+}
+.margin-left-xss{
+  margin-left:6rpx
+}
+.margin-lr-xss{
+  margin-left:6rpx;
+  margin-right:6rpx;
+}
+.margin-right-xss{
+  margin-right:6rpx
+}
+.time_box{
+  display: inline-block;
+}
+.time_box view{
+  min-width: 40rpx;
+  background-color:#000;
+  color:#fff;
+  font-size:30rpx;
+  text-align: center;
+  float: left;
+}
+.time_box text{
+  float: left;
+}
+.time_box view:first-child{
+  margin-left: 0;
+}
+.role-text{
+  color:#727172
+}
+.text-c{
+  text-align:center;
+}
+.arrow_img{
+  height: 33rpx;
+  width: 64rpx;
+}
+.arrow_rotate{
+  transform: rotate(180deg);
+}
+.good_name{
+  /* overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; */
+  width: calc(100% - 150rpx);
+  display: block;
+} 
+.guig{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 50%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* 商品选择 */
+.goodsChoicePop{
+  padding: 20rpx 50rpx;
+}
+.goodsChoicePop button{
+  height: 115rpx;
+  line-height: 115rpx;
+  border-radius: 120rpx;
+}
+.goodsInfo{
+  display: flex;
+  justify-content: space-between;
+}
+.goodsInfo image{
+  width: 150rpx;
+  height: 120rpx;
+  margin-right: 20rpx;
+}
+.goodsInfo .word{
+  font-size: 30rpx;
+  color: #000;
+  margin-bottom: 13rpx;
+}
+.numbox{
+  display: flex;
+  justify-content: space-between;
+  line-height: 120rpx;
+}
+.nums{
+  display: flex;
+  justify-content: space-between;
+}
+.nums input{
+  width: 100rpx;
+  height: 50rpx;
+  margin: auto;
+  text-align: center;
+}
+.nbr{
+  width: 50rpx;
+  text-align: center;
+  font-size: 40rpx;
+}
+.nbr-l{
+  margin-left: 20rpx;
+}

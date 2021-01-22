@@ -1,0 +1,179 @@
+/* pages/order/order.wxss */
+.order-class{
+  display: flex;
+  font-size: 28rpx;
+  background: #fff;
+  margin-bottom: 10rpx;
+}
+.order-class view{
+  width: 16.6%;
+  text-align: center;
+  padding: 25rpx 0;
+}
+.order-class view.active{
+  color: #b2282e;
+}
+.order-info{
+  display: none;
+}
+.order-info.active{
+  display: block;
+}
+.order-list{
+  background: #fff;
+  padding: 0 40rpx;
+  font-size: 28rpx;
+  margin-bottom: 10rpx;
+}
+.order-list .con_view{
+  display: flex;
+}
+
+.order-list .order-num{
+  display: flex;
+  justify-content: space-between;
+  padding: 15rpx 0;
+}
+.order-list .order-num .wait{
+  color: #b2282e;
+}
+.order-list .order-con{
+  padding: 30rpx 0;
+  border-bottom: 1px solid #eee;
+}
+.order-list .order-con image{
+  width: 25%;
+  height: 165rpx;
+  margin-right: 20rpx;
+}
+.order-list .order-con .con_view>view{
+  width: 60%;
+}
+.order-list .order-con .con_view>view .name{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.order-list .order-con .con_view>view .size{
+  font-size: 20rpx;
+  color: #ccc;
+}
+.order-list .order-con .con_view>view .price{
+  font-size: 24rpx;
+  color: #ff0000;
+  display: block;
+}
+.order-list .order-con .con_view>text{
+  width: 15%;
+  text-align: center;
+  color: #999;
+}
+
+.order-list .btn{
+  display: flex;
+  justify-content: flex-end;
+  padding: 15rpx 0;
+  border-bottom: none;
+}
+.order-list button{
+  margin: 0 10rpx;
+  border-radius: 35rpx;
+  font-size: 22rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  box-sizing: border-box;
+}
+.order-list .btn .cancel{
+  border: 1px solid #ccc;
+  background: transparent;
+}
+.order-list .btn .pay{
+  color: #fff;
+  background: #b2282e;
+}
+.wuliu{
+  position: fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+.wuliu_main{
+  width:80%;
+  height:70%;
+  overflow: hidden;
+  position:absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  background: #fff;
+  border-radius: 20rpx;
+}
+.wuliu_guan{
+  position: absolute;
+  bottom:5.5%;
+  left:50%;
+  transform: translateX(-50%);
+  color: #fff;
+}
+
+/* 物流 */
+.wuliu_main .ul{
+  padding:40rpx;
+  height: 100%;
+  box-sizing: border-box;
+}
+.wuliu_main .ul .li{
+  margin-left:40rpx;
+  border-bottom:1px solid #ccc;
+  font-size:24rpx;
+  position: relative;
+  overflow:initial;
+  padding:20rpx 0;
+}
+.wuliu_main .ul .li text:nth-child(1){
+  position: absolute;
+  width:20rpx;
+  height:20rpx;
+  background: #ccc;
+  top: 45rpx;
+  left:-40rpx;
+  border-radius: 50%;
+}
+.wuliu_main .ul .li text:nth-child(2){
+  position: absolute;
+  top:74rpx;
+  left:-32rpx;
+  height:calc(100% - 40rpx);
+  border-left:5rpx solid #ccc;
+}
+.wuliu_main .ul .li:last-child text:nth-child(2){
+  display: none;
+}
+.wuliu_main .ul .li:first-child{
+  color: #b2282e;
+}
+.wuliu_main .ul .li:first-child text:nth-child(1){
+  background: #b2282e;
+}
+
+.tuihuo{
+  position: fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+.tuihuo_main{width:70%;background: #fff;border-radius: 10rpx;position: absolute;top:50%;left: 50%;transform: translate(-50%,-50%);padding:0 40rpx;}
+.tuihuo_title{font-size:30rpx;font-weight: bold;text-align: center;padding:30rpx 0;}
+.tuihuo .section__title{font-size: 26rpx;}
+.tuihuo_con{padding-bottom:20rpx;}
+.tuihuo picker{border:1px solid #ccc;border-radius: 8rpx;margin:15rpx 0;padding:16rpx 10rpx;font-size: 26rpx;}
+.tuihuo input{border:1px solid #ccc;border-radius: 8rpx;margin:15rpx 0;padding:6rpx 10rpx;font-size: 26rpx;}
+.tuihuo_btn{display: flex;font-size:28rpx;}
+.tuihuo_btn text{display:block;width:50%;text-align: center;padding:10rpx 0 30rpx;}
+

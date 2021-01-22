@@ -1,0 +1,56 @@
+<!--pages/evaluteDetail/evaluteDetail.wxml-->
+<view class='evalute-container'>
+  <view class='evalute'>
+    <view class='item'>
+      <view class='person'>
+        <view class='protrait'>
+          <image src='{{usernameimg}}' />
+        </view>
+        <view class='name'>{{username}}</view>
+        <view></view>
+      </view>
+      <view class='datas'>
+        <view>{{usernamedata}}</view>
+        <!-- <view><text>2</text>人浏览过</view> -->
+        <!-- <view><text>1</text>人觉得很赞</view> -->
+      </view>
+      <view class='con'>{{nameping}}</view>
+      <view class="goods">
+        <view class='img'>
+          <image src='{{img}}' />
+        </view>
+        <view class='detail'>
+          <view style="margin-top:14px;">{{title}}</view>
+          <view class='size'></view>
+          <view class='price'></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='all-evalute'>
+    <view class='title'><text>全部评论</text></view>
+    <view class="list" wx:for="{{list}}" wx:for-item="item" wx:for-index="i">
+      <view class="all-person">
+        <view class='protrait'>
+          <image src='{{item.cc.head_img}}' />
+        </view>
+        <view class='name'>
+          <view>{{item.cc.nickname}}</view>
+          <view class='date'>{{item.cc_time}} {{i+1}}楼</view>
+        </view>
+      </view>
+      <view>{{item.cc_content}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="write {{showView?'':'other'}}">
+  <view class="before">
+    <button bindtap='onChangeShowState'><text class="iconfont icon-pinglun3"></text> 评论</button>
+  </view>
+  <view class='after'>
+    <input type="text" bindinput="input_val"/>
+    <button bindtap="sub_val">发送</button>
+  </view>
+</view>

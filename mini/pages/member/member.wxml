@@ -1,0 +1,67 @@
+<view>
+
+  <view class="kapian" style="{{kaval.mem_back?'background:url('+kaval.mem_back+');':(kaval.colorval?'background:'+kaval.colorval:'background:#63b359')}}">
+    <view class="kapian_top">
+      <image src="{{kaval.icons?kaval.icons:touimg}}"></image>
+      <view>
+        <text>{{kaval.vipcard_name?kaval.vipcard_name:name}}</text>
+        <text></text>
+      </view>
+    </view>
+    <view class="kapian_right">
+      <text class="iconfont icon-erweima"></text>
+    </view>
+    <view class="kapian_num">
+      <text>{{kaval.member_idcards ? kaval.member_idcards : ''}}</text>
+    </view>
+  </view>
+
+  <view class="huiyuan_ul">
+    <view class="huiyuan_li">
+      <view>积分</view>
+      <text>{{kaval.score?kaval.score:'0'}}</text>
+    </view>
+    <view class="huiyuan_li">
+      <view>余额</view>
+      <text>{{kaval.money?kaval.money:'0.00'}}</text>
+    </view>
+    <view class="huiyuan_li">
+      <view>等级</view>
+      <text>{{kaval.grade_name}}</text>
+    </view>
+  </view>
+
+  <view class="list">
+    <!-- <view class="list_li">
+      <navigator url="../Recharge/recharge" class="item">
+        <text>我的充值</text>
+        <text class="iconfont icon-arrow"></text>
+      </navigator>
+    </view> -->
+    <view class="list_li">
+      <navigator url="../vipDetails/vipdetails?logo={{kaval.icons}}&name={{kaval.grade_name}}" class="item">
+        <text>会员卡详情</text>
+        <text class="iconfont icon-arrow"></text>
+      </navigator>
+    </view>
+    <view class="list_li">
+      <navigator url="../userdata/userdata" class="item">
+        <text>个人信息</text>
+        <text class="iconfont icon-arrow"></text>
+      </navigator>
+    </view>
+    <view class="list_li">
+      <navigator url="../bill/bill" class="item">
+        <text>账单详情</text>
+        <text class="iconfont icon-arrow"></text>
+      </navigator>
+    </view>
+    <view class="list_li">
+      <navigator url="../store/store" class="item">
+        <text>适用门店</text>
+        <text class="iconfont icon-arrow"></text>
+      </navigator>
+    </view>
+  </view>
+
+</view>

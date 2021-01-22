@@ -1,0 +1,44 @@
+<form bindsubmit="formSubmit">
+<!--pages/userInfo/userInfo.wxml-->
+<view class="userInfo-container">
+    <view class="head">
+        <view class="head-left">
+        
+            <image src="{{avatarUrl}}" alt="" class="tx" />
+            <view class="head-info">
+              <view class="lv" bindtap="onshowActionSheet">修改头像</view>
+            </view>
+        </view>     
+    </view>
+
+
+    <view class="userInfo-con">
+    
+  
+      <view>
+        <text>昵称：</text>
+        <input name='name' placeholder='请输入您的昵称' bindchange="checkname"/>
+      </view>
+      <view>
+        <text>姓名：</text>
+        <input placeholder="请输入您的姓名"  name='names' bindchange="checknames"/>
+      </view>
+      <view>
+        <text>手机号：</text>
+        <input placeholder='请输入您的手机号' name='tel' bindchange="checktel" />
+      </view>
+      <view>
+        <text>生日：</text>
+        <input placeholder='请输入您的生日' name='birth' bindchange="checkbir"/>
+      </view>
+      <text class="prompt">生日填写后不可更改</text>
+    </view>
+    
+    <button formType="submit" bindtap='cons'>确认</button>
+</view>
+
+
+</form>
+
+
+
