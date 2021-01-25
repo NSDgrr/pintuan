@@ -67,7 +67,7 @@
           <button class="footer-btn wait-pay fr bg-color" data-order="{{orderinfo.so_orderid}}" data-price="{{orderinfo.so_sum_price}}" bindtap='pay'>立即支付</button>
         </block>
         <block wx:if="{{orderinfo.btn == '2'}}">
-          <button class="footer-btn wait-pay fr bg-color" data-ord="{{orderinfo.so_id}}" wx:if="{{orderinfo.is_hasbeen_apply == 0}}" bindtap='tuikuan'>申请退款</button>
+          <button class="footer-btn wait-pay fr bg-color" data-ord="{{orderinfo.so_id}}" data-back="{{item.is_back}}" wx:if="{{orderinfo.is_hasbeen_apply == 0}}" bindtap='tuikuan'>申请退款</button>
         </block>
         <block wx:if="{{orderinfo.btn == '3'}}">
           <button class="footer-btn wait-pay fr bg-color" data-ord="{{orderinfo.so_id}}"  bindtap='queren_shou'>确认收货</button>
@@ -126,6 +126,19 @@
 	<view wx:if="{{orderinfo.so_invoice_type == '1'}}">抬头：{{orderinfo.so_invoice_text}}</view>
 	<view wx:if="{{orderinfo.so_invoice_type == '2'}}">纳税人识别号：{{orderinfo.so_invoice_numb}}</view>
 	<view wx:if="{{orderinfo.so_invoice_type == '1'}}">邮箱：{{orderinfo.so_invoice_email}}</view>
+</view>
+
+<!-- 自提信息 位置,负责人,联系方式,提货时间,
+t_address     自提点地址
+t_uname      负责人
+t_tel        联系方式
+t_time     营业时间/取货时间
+ -->
+<view class="mes-lists m-text-list" wx:if="{{orderinfo.so_delivery==3}}">
+  <view>提货地址：{{orderinfo.t_address}}</view>
+	<view>负责人：{{orderinfo.t_uname}}</view>
+	<view>联系方式：{{orderinfo.t_tel}}</view>
+	<view>提货时间：{{orderinfo.t_time}}</view>
 </view>
 
 

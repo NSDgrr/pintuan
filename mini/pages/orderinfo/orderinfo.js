@@ -306,45 +306,62 @@ Page({
   //申请退款
   tuikuan: function (e) {
     var ord = e.currentTarget.dataset.ord
+    var back = e.currentTarget.dataset.back//是否可退款：1是 2不能
     var that = this;
-    wx.showModal({
-      title: '提示',
-      content: '确认申请退款吗',
-      success: function (res) {
-        wx.request({
-          url: app.data.http_text + '.mobtop.com.cn/index.php?s=/Miniapp/Index/order_apply',
-          data: {
-            token: wx.getStorageSync('unionId'),
-            orderId: Number(ord),
-            mpid: app.data.mpid,
-            state: 1
-          },
-          method: 'GET',
-          success: function (res) {
-            console.log(res);
-            if (res.data.code == 200) {
-              wx.showToast({
-                title: '已提交申请退款',
-                icon: 'none',
-                duration: 2000,
-                success: function () {
-                  that.onShow();
+    if(back == 1){//能点击操作
+      wx.showModal({
+        title: '提示',
+        content: '确认申请退款吗',
+        success: function (res) {
+          if (res.confirm) {
+            wx.request({
+              url: app.data.http_text + '.mobtop.com.cn/index.php?s=/Miniapp/Index/order_apply',
+              data: {
+                token: wx.getStorageSync('unionId'),
+                orderId: Number(ord),
+                mpid: app.data.mpid,
+                state: 1
+              },
+              method: 'GET',
+              success: function (res) {
+                console.log(res);
+                if (res.data.code == 200) {
+                  wx.showToast({
+                    title: '已提交申请退款',
+                    icon: 'none',
+                    duration: 2000,
+                    success: function () {
+                      that.onShow();
+                    }
+                  })
+                } else {
+                  wx.showToast({
+                    title: '申请退款失败',
+                    icon: 'none',
+                    duration: 2000,
+                    success: function () {
+  
+                    }
+                  })
                 }
-              })
-            } else {
-              wx.showToast({
-                title: '申请退款失败',
-                icon: 'none',
-                duration: 2000,
-                success: function () {
+              }
+            })
+          }else{
 
-                }
-              })
-            }
           }
-        })
-      }
-    })
+          
+        }
+      })
+    }else{
+      wx.showToast({
+        title: '该活动暂不支持退款,具体请联系平台',
+        icon: 'none',
+        duration: 2000,
+        success: function () {
+
+        }
+      })
+    }
   },
   //取消退款
   quxiao_tuikuan: function (e) {

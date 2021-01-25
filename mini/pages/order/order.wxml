@@ -44,7 +44,7 @@
           <!-- <button class="cancel" data-ord="{{item.so_id}}"  bindtap='tiantuihuo'>填写退货单号</button> -->
           <!-- <button class="cancel" data-ord="{{item.so_id}}"  bindtap='ok_weixiu'>确认收到维修商品</button> -->
           <block wx:if="{{item.btn == '2'}}">
-            <button class="cancel" data-ord="{{item.so_id}}" wx:if="{{item.is_hasbeen_apply == 0}}" bindtap='tuikuan'>申请退款</button>
+            <button class="cancel" data-ord="{{item.so_id}}" data-back="{{item.is_back}}" wx:if="{{item.is_hasbeen_apply == 0}}" bindtap='tuikuan'>申请退款</button>
           </block>
           <block wx:if="{{item.btn == '3'}}">
             <!-- <button class="cancel" data-ord="{{item.so_id}}"  bindtap='chakan_liu'>查看物流</button> -->
@@ -115,7 +115,7 @@
           <!-- <button class="cancel" data-ord="{{item.so_id}}"  bindtap='tiantuihuo'>填写退货单号</button> -->
           <!-- <button class="cancel" data-ord="{{item.so_id}}"  bindtap='ok_weixiu'>确认收到维修商品</button> -->
           <block wx:if="{{item.btn == '2'}}">
-            <button class="cancel" data-ord="{{item.so_id}}" wx:if="{{item.is_hasbeen_apply == 0}}" bindtap='tuikuan'>申请退款</button>
+            <button class="cancel" data-ord="{{item.so_id}}" data-back="{{item.is_back}}" wx:if="{{item.is_hasbeen_apply == 0}}" bindtap='tuikuan'>申请退款</button>
           </block>
           <block wx:if="{{item.btn == '3'}}">
             <!-- <button class="cancel" data-ord="{{item.so_id}}"  bindtap='chakan_liu'>查看物流</button> -->
@@ -186,7 +186,7 @@
           <!-- <button class="cancel" data-ord="{{item.so_id}}"  bindtap='tiantuihuo'>填写退货单号</button> -->
           <!-- <button class="cancel" data-ord="{{item.so_id}}"  bindtap='ok_weixiu'>确认收到维修商品</button> -->
           <block wx:if="{{item.btn == '2'}}">
-            <button class="cancel" data-ord="{{item.so_id}}" wx:if="{{item.is_hasbeen_apply == 0}}" bindtap='tuikuan'>申请退款</button>
+            <button class="cancel" data-ord="{{item.so_id}}" data-back="{{item.is_back}}" wx:if="{{item.is_hasbeen_apply == 0}}" bindtap='tuikuan'>申请退款</button>
           </block>
           <block wx:if="{{item.btn == '3'}}">
             <!-- <button class="cancel" data-ord="{{item.so_id}}"  bindtap='chakan_liu'>查看物流</button> -->
@@ -257,7 +257,7 @@
           <!-- <button class="cancel" data-ord="{{item.so_id}}"  bindtap='tiantuihuo'>填写退货单号</button> -->
           <!-- <button class="cancel" data-ord="{{item.so_id}}"  bindtap='ok_weixiu'>确认收到维修商品</button> -->
           <block wx:if="{{item.btn == '2'}}">
-            <button class="cancel" data-ord="{{item.so_id}}" wx:if="{{item.is_hasbeen_apply == 0}}" bindtap='tuikuan'>申请退款</button>
+            <button class="cancel" data-ord="{{item.so_id}}" data-back="{{item.is_back}}" wx:if="{{item.is_hasbeen_apply == 0}}" bindtap='tuikuan'>申请退款</button>
           </block>
           <block wx:if="{{item.btn == '3'}}">
             <!-- <button class="cancel" data-ord="{{item.so_id}}"  bindtap='chakan_liu'>查看物流</button> -->
@@ -328,7 +328,7 @@
           <!-- <button class="cancel" data-ord="{{item.so_id}}"  bindtap='tiantuihuo'>填写退货单号</button> -->
           <!-- <button class="cancel" data-ord="{{item.so_id}}"  bindtap='ok_weixiu'>确认收到维修商品</button> -->
           <block wx:if="{{item.btn == '2'}}">
-            <button class="cancel" data-ord="{{item.so_id}}" wx:if="{{item.is_hasbeen_apply == 0}}" bindtap='tuikuan'>申请退款</button>
+            <button class="cancel" data-ord="{{item.so_id}}" data-back="{{item.is_back}}" wx:if="{{item.is_hasbeen_apply == 0}}" bindtap='tuikuan'>申请退款</button>
           </block>
           <block wx:if="{{item.btn == '3'}}">
             <!-- <button class="cancel" data-ord="{{item.so_id}}"  bindtap='chakan_liu'>查看物流</button> -->
@@ -399,7 +399,7 @@
           <!-- <button class="cancel" data-ord="{{item.so_id}}"  bindtap='tiantuihuo'>填写退货单号</button> -->
           <!-- <button class="cancel" data-ord="{{item.so_id}}"  bindtap='ok_weixiu'>确认收到维修商品</button> -->
           <block wx:if="{{item.btn == '2'}}">
-            <button class="cancel" data-ord="{{item.so_id}}" wx:if="{{item.is_hasbeen_apply == 0}}" bindtap='tuikuan'>申请退款</button>
+            <button class="cancel" data-ord="{{item.so_id}}" data-back="{{item.is_back}}" wx:if="{{item.is_hasbeen_apply == 0}}" bindtap='tuikuan'>申请退款</button>
           </block>
           <block wx:if="{{item.btn == '3'}}">
             <!-- <button class="cancel" data-ord="{{item.so_id}}"  bindtap='chakan_liu'>查看物流</button> -->

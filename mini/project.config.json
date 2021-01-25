@@ -1,103 +1,103 @@
 {
-	"description": "项目配置文件",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": false,
-		"es6": true,
-		"postcss": true,
-		"preloadBackgroundData": false,
-		"minified": true,
-		"newFeature": true,
-		"autoAudits": false,
-		"coverView": true,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false,
-		"enhance": false,
-		"nodeModules": false,
-		"uglifyFileName": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"compileHotReLoad": false,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		},
-		"bundle": false,
-		"useIsolateContext": true,
-		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false,
-		"useMultiFrameRuntime": false,
-		"useApiHook": true,
-		"userConfirmedBundleSwitch": false,
-		"packNpmManually": false,
-		"packNpmRelationList": [],
-		"minifyWXSS": true
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.13.2",
-	"appid": "wx06f83d98afd80b66",
-	"projectname": "mobtop_shangcheng",
-	"cloudfunctionTemplateRoot": "",
-	"watchOptions": {
-		"ignore": []
-	},
-	"debugOptions": {
-		"hidedInDevtools": []
-	},
-	"scripts": {},
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"list": []
-		},
-		"conversation": {
-			"list": []
-		},
-		"plugin": {
-			"list": []
-		},
-		"game": {
-			"list": []
-		},
-		"gamePlugin": {
-			"list": []
-		},
-		"miniprogram": {
-			"list": [
-				{
-					"id": -1,
-					"name": "pages/index/index",
-					"pathName": "pages/index/index",
-					"query": "scene=hplqnhsq1",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/index/index",
-					"pathName": "pages/index/index",
-					"query": "scene=hplqnhsq1",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/index/index",
-					"pathName": "pages/index/index",
-					"query": "scene=hplqnhsq1",
-					"scene": null
-				},
-				{
-					"id": 3,
-					"name": "pages/banerDetail/banerDetail",
-					"pathName": "pages/banerDetail/banerDetail",
-					"query": "id=30&key=440",
-					"scene": null
-				}
-			]
-		}
-	}
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "userConfirmedBundleSwitch": false,
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.13.2",
+  "appid": "wx06f83d98afd80b66",
+  "projectname": "mobtop_shangcheng",
+  "cloudfunctionTemplateRoot": "",
+  "watchOptions": {
+    "ignore": []
+  },
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "scripts": {},
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "scene=hplqnhsq1",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "scene=hplqnhsq1",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "scene=hplqnhsq1",
+          "scene": null
+        },
+        {
+          "id": 3,
+          "name": "pages/banerDetail/banerDetail",
+          "pathName": "pages/banerDetail/banerDetail",
+          "query": "id=30&key=440",
+          "scene": null
+        }
+      ]
+    }
+  }
 }

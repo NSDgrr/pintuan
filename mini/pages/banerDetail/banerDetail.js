@@ -53,6 +53,10 @@ Page({
     is_take_own:'',//配送选择提示：1不展示,2展示
     is_delivery:0,//1配送0自提
     tabIndex: [0],//规格
+
+    startTimes:'1',//开始时间戳
+    endTimes:'2',//结束时间戳
+    pindan: true,//可以拼单
   },
   /**
      * 生命周期函数--监听页面加载
@@ -81,13 +85,10 @@ Page({
     console.log("结束时间",endTimeList)
     this.setData({ actEndTimeList: endTimeList});
     // 执行倒计时函数
-    this.countDown();
+    // this.countDown();
     console.log(endTimeList);
-
-    
   },
  
-
   onShow: function () {
     var that = this;
     this.goodDetail();
@@ -97,7 +98,7 @@ Page({
   },
  
   // 商品详情接口
- goodDetail(){
+  goodDetail(){
   // console.log(this.data.swiperList);
     var that = this;
     wx.request({
@@ -152,6 +153,8 @@ Page({
           actEndTimeList:[ent_time_day],
           state:res.data.data.tuan_data.state,
           is_take_own:res.data.data.tuan_data.is_take_own,
+          startTimes:res.data.data.tuan_data.start_time,
+          endTimes:res.data.data.tuan_data.hour,
           // count_down:countDown,
         })
         let arr = [];
@@ -176,6 +179,7 @@ Page({
             tabIndex
           })
         }
+        that.countDown();
       },
       fail: function () {
         console.log("接口调用失败");
@@ -195,10 +199,11 @@ Page({
     return param < 10 ? '0' + param : param; 
   },
   countDown(){//倒计时函数
-   
+    // let interval = setTimeout(this.countDown,1000);
     // 获取当前时间，同时得到活动结束时间数组
     let newTime = new Date().getTime();
     let endTimeList = this.data.actEndTimeList;
+    
     let countDownArr = [];
 
     // 对结束时间进行处理渲染到页面
@@ -223,12 +228,10 @@ Page({
           min: this.timeFormat(min),
           sec: this.timeFormat(sec)
         }
-        // obj = {
-        //   // day: this.timeFormat(day),
-        //   hou: dayN + this.timeFormat(hou),
-        //   min: this.timeFormat(min),
-        //   sec: this.timeFormat(sec)
-        // }
+        this.setData({
+          pindan: true
+        })
+        setTimeout(this.countDown,1000);
       }else{//活动已结束，全部设置为'00'
         obj = {
           // day: '00',
@@ -236,12 +239,15 @@ Page({
           min: '00',
           sec: '00'
         }
+        this.setData({
+          pindan: false
+        })
+        // clearTimeout(interval);
       }
       countDownArr.push(obj);
     })
     // 渲染，然后每隔一秒执行一次倒计时函数
     this.setData({ countDownList: countDownArr})
-    setTimeout(this.countDown,1000);
   },
 
   /* 输入框事件  数量 */

@@ -18,21 +18,21 @@
 
   <!--商品信息-->
  <view class="goods-info-box text-white">
-    <view class="padding-tb-sm flex space-between" style="border-bottom:1rpx solid #fff">
+    <view class="padding-tb-sm flex space-between" style="border-bottom:1rpx solid #fff" wx:if="{{goodName}}">
       <text class="bold text-name spec_name">商品名称:</text>
       <text class="margin-left-xs text-df good_name">{{goodName}}</text>
     </view>
-    <view class=" flex space-between padding-tb-sm" style="border-bottom:1rpx solid #fff"> 
+    <view class=" flex space-between padding-tb-sm" style="border-bottom:1rpx solid #fff" wx:if="{{goodSpecs1}}"> 
       <view class="left-item flex space-between">
         <text class="bold text-name" style="flex:0 0 40%;">商品规格:</text>
         <text class="margin-left-xs text-df guig" wx:if="{{listx.tuan_data.spec_res.length!==0}}">{{goodSpecs1}}/{{goodSpecs2}}/{{goodSpecs3}}</text>
       </view>
-      <view class="right-item text-r flex">
+      <view class="right-item text-r flex" wx:if="{{goodBrand}}">
         <text class="bold text-name brand">品牌:</text>
         <text class="text-df goodsBrand">{{goodBrand}}</text>
       </view>
     </view>
-    <view class="padding-top-sm flex">
+    <view class="padding-top-sm flex" wx:if="{{goodDesc}}">
       <text class="bold text-name spec_name">商品特点:</text>
       <text class="margin-left-xs text-df">{{goodDesc}}</text>
     </view>
@@ -41,8 +41,9 @@
   <view class="part_left">
     <view class="time_tit text-sm text-df text-red">距离结束仅剩</view>
     <view class="flex space-between padding-tb-xss">
-      <view class="time_box space-between" wx:for="{{countDownList}}"
-       wx:for-index="index"
+      <view class="time_box space-between" 
+        wx:for="{{countDownList}}"
+        wx:for-index="index"
         wx:for-item="item"
         wx:key="index">
           <view>{{item.hou}}</view>
@@ -166,12 +167,21 @@
     <!-- <view url="../confirmOrder/confirmOrder?id={{listx.sg_id}}" data-orid="{{listx.sg_id}}" data- class="footerBtn text-sl bold" bindtap="getInfo">
       立即拼单
     </view> -->
-    <view data-orid="{{listx.sg_id}}" wx:if="{{state==3}}" class="footerBtn text-sl bold activeBtn" bindtap="goodsChoiceChange">
-      立即拼单
-    </view>
-    <view data-orid="{{listx.sg_id}}" wx:else class="footerBtn text-sl bold grayBtn">
-      立即拼单
-    </view>
+    <!-- <block 
+      wx:for="{{countDownList}}"
+      wx:for-index="index"
+      wx:for-item="item"
+      wx:key="index">
+      {{item.hou}} {{item.min}} {{item.sec}} -->
+      <view data-orid="{{listx.sg_id}}" 
+      wx:if="{{state==3 && pindan}}" class="footerBtn text-sl bold activeBtn" bindtap="goodsChoiceChange">
+        立即拼单
+      </view>
+      <view class="footerBtn text-sl bold grayBtn" wx:else>
+        立即拼单
+      </view>
+    <!-- </block> -->
+    
   </view>
 
 
